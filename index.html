@@ -1,0 +1,2621 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন | সুরক্ষিত অনলাইন নিবন্ধন ও ব্যবস্থাপনা পোর্টাল</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Bengali & Arabic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Hind Siliguri"', 'sans-serif'],
+            serif: ['"Noto Serif Bengali"', 'serif'],
+            arabic: ['"Amiri"', 'serif'],
+          },
+          colors: {
+            emerald: {
+              850: '#064e3b',
+              950: '#022c22',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #f4f7f5;
+      color: #1e293b;
+    }
+    .bismillah-glow {
+      text-shadow: 0 2px 10px rgba(251, 191, 36, 0.35);
+    }
+    .card-hover {
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -8px rgba(6, 78, 59, 0.14);
+    }
+    @media print {
+      body * { visibility: hidden; }
+      #printable-receipt-area, #printable-receipt-area * { visibility: visible; }
+      #printable-receipt-area {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+      }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #e2e8f0; }
+    ::-webkit-scrollbar-thumb { background: #059669; border-radius: 9999px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- Custom Modal (Receipt / Login / Security Logs / Confirmations) -->
+  <div id="custom-modal" class="fixed inset-0 bg-black/65 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-emerald-200 overflow-hidden">
+      <div class="bg-emerald-950 text-white px-5 py-4 flex items-center justify-between border-b-2 border-amber-400">
+        <h3 id="modal-title" class="font-bold text-lg font-serif flex items-center gap-2">তথ্য বিবরণী</h3>
+        <button onclick="closeModal()" class="text-emerald-200 hover:text-white p-1.5 rounded-lg">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div id="modal-body" class="p-5 max-h-[78vh] overflow-y-auto text-sm sm:text-base"></div>
+      <div id="modal-footer" class="bg-slate-50 px-5 py-3 border-t flex flex-wrap justify-end gap-2">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-sm">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- TOP HEADER & BISMILLAH BANNER                             -->
+  <!-- ========================================================= -->
+  <header class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-900 text-white shadow-xl border-b-4 border-amber-400">
+    <!-- Bismillah Strip -->
+    <div class="bg-emerald-950/90 border-b border-emerald-800/70 py-2.5 px-4 text-center">
+      <p class="font-arabic text-amber-300 text-lg sm:text-xl tracking-wide bismillah-glow">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+      </p>
+      <p class="font-serif text-amber-200 text-base sm:text-lg font-bold tracking-wider mt-0.5">
+        "বিসমিল্লাহির রহমানির রহিম"
+      </p>
+    </div>
+
+    <!-- Main Foundation Identity & Secure Active Role Box -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
+        <!-- Crest & Title -->
+        <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-300 p-0.5 shadow-lg shrink-0">
+            <div class="w-full h-full bg-emerald-950 rounded-2xl flex flex-col items-center justify-center text-amber-300">
+              <i class="fa-solid fa-hand-holding-heart text-2xl sm:text-3xl"></i>
+              <span class="text-[10px] font-bold tracking-widest mt-1">TBSWF</span>
+            </div>
+          </div>
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-emerald-800/90 border border-emerald-600/60 text-amber-300 text-xs font-semibold mb-1.5">
+              <i class="fa-solid fa-shield-halved"></i> পাসওয়ার্ড সুরক্ষিত ও স্বচ্ছ সমাজকল্যাণ পোর্টাল
+            </div>
+            <h1 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন
+            </h1>
+            <p class="text-emerald-200 text-sm sm:text-base font-medium mt-0.5">
+              Talukder Bari Social Welfare Foundation • <span class="text-amber-300 italic">"ঐক্য, সেবা ও সামাজিক উন্নয়নে অঙ্গীকারবদ্ধ"</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- SECURE ACTIVE ROLE & PRESIDENT LOGIN CONTROL BOX -->
+        <div class="w-full lg:w-auto bg-emerald-950/90 border-2 border-amber-400/70 rounded-2xl p-4 shadow-lg">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <span class="text-xs text-amber-300 font-bold flex items-center gap-1.5">
+              <span id="role-status-dot" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+              সক্রিয় পোর্টাল ভূমিকা (Active Role):
+            </span>
+            <button onclick="openSecurityLogModal()" class="text-[11px] bg-emerald-900 hover:bg-emerald-800 text-emerald-200 border border-emerald-700 px-2.5 py-0.5 rounded-lg flex items-center gap-1">
+              <i class="fa-solid fa-shield-cat text-amber-400"></i> নিরাপত্তা লগ
+            </button>
+          </div>
+
+          <!-- Current Logged-in Role Display -->
+          <div id="active-role-banner" class="bg-emerald-900/90 border border-emerald-700 rounded-xl px-3.5 py-2 mb-2.5 flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <p id="active-role-title" class="text-xs sm:text-sm font-bold text-white truncate">🌐 সাধারণ দর্শক (পাবলিক মোড)</p>
+              <p id="active-role-sub" class="text-[11px] text-emerald-300 truncate">নিয়ন্ত্রণ বা অনুমোদনের জন্য নিজ নিজ পোর্টালে লগইন করুন</p>
+            </div>
+            <span id="security-lock-badge" class="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[10px] font-bold shrink-0">
+              <i class="fa-solid fa-lock"></i> লকড
+            </span>
+          </div>
+
+          <!-- Action Buttons: President Login / Portal Login / Logout -->
+          <div id="header-auth-buttons" class="flex flex-wrap items-center gap-2">
+            <button onclick="openRoleLoginModal('president')" class="flex-1 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-emerald-950 font-bold text-xs sm:text-sm shadow flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-crown"></i> সভাপতি লগইন (Md Rasel Talukder)
+            </button>
+            <button onclick="openRoleLoginModal('')" class="px-3.5 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white border border-emerald-600 font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition">
+              <i class="fa-solid fa-key"></i> বিভাগীয় লগইন
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Navigation Tabs -->
+      <nav class="mt-6 pt-3 border-t border-emerald-800/80 flex flex-wrap gap-2" aria-label="Main Navigation">
+        <button onclick="navigateTo('dashboard')" id="nav-dashboard" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-amber-400 text-emerald-950 shadow">
+          <i class="fa-solid fa-chart-pie"></i> পাবলিক ড্যাশবোর্ড
+        </button>
+        <button onclick="navigateTo('register')" id="nav-register" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-emerald-800/80 text-emerald-100 hover:bg-emerald-700">
+          <i class="fa-solid fa-user-plus"></i> সদস্য নিবন্ধন ও চাঁদা
+        </button>
+        <button onclick="navigateTo('councils')" id="nav-councils" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-emerald-800/80 text-emerald-100 hover:bg-emerald-700">
+          <i class="fa-solid fa-users-rectangle"></i> পরিষদ ও নেতৃবৃন্দ (ছবিসহ)
+        </button>
+        <button onclick="navigateTo('portals')" id="nav-portals" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-emerald-800/80 text-emerald-100 hover:bg-emerald-700">
+          <i class="fa-solid fa-building-shield"></i> বিভাগীয় পোর্টাল, বাজেট ও নিয়ন্ত্রণ
+        </button>
+        <button onclick="navigateTo('donations')" id="nav-donations" class="nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-emerald-800/80 text-emerald-100 hover:bg-emerald-700">
+          <i class="fa-solid fa-hand-holding-dollar"></i> অনুদান দেওয়া ও নেওয়া তালিকা
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+
+    <!-- ========================================================= -->
+    <!-- SECTION 1: PUBLIC DASHBOARD (পাবলিক ড্যাশবোর্ড)           -->
+    <!-- ========================================================= -->
+    <section id="view-dashboard" class="space-y-6">
+      <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-emerald-100 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200 mb-2">
+            স্বচ্ছতা, নিরাপত্তা ও জবাবদিহিতামূলক পাবলিক ড্যাশবোর্ড
+          </span>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-emerald-950">
+            ফাউন্ডেশনের সার্বিক কার্যক্রম, তহবিল ও প্রশাসনিক কাঠামো
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            সব সদস্য ও শুভানুধ্যায়ী এখান থেকে ফাউন্ডেশনের তহবিল, সংগৃহীত চাঁদা, অনুদান, চলমান প্রকল্প এবং অনুমোদিত নোটিশ সরাসরি দেখতে পারবেন।
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 shrink-0">
+          <button onclick="navigateTo('register')" class="px-4 py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold shadow-sm flex items-center gap-2">
+            <i class="fa-solid fa-id-card"></i> নতুন সদস্য নিবন্ধন
+          </button>
+          <button onclick="navigateTo('register'); setTimeout(()=>document.getElementById('chanda-section').scrollIntoView({behavior:'smooth'}),150)" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-emerald-950 text-sm font-bold shadow-sm flex items-center gap-2">
+            <i class="fa-solid fa-coins"></i> মাসিক চাঁদা প্রদান
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Summary Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-emerald-100 shadow-sm card-hover">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">নিবন্ধিত মোট সদস্য</p>
+              <h3 id="stat-total-members" class="text-2xl sm:text-3xl font-bold text-emerald-900 mt-1">০ জন</h3>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+          <p class="text-xs text-emerald-700 mt-3 font-medium">উপদেষ্টা, কার্যনির্বাহী ও সাধারণ সদস্য</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm card-hover">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">মোট সংগৃহীত চাঁদা</p>
+              <h3 id="stat-total-chanda" class="text-2xl sm:text-3xl font-bold text-amber-700 mt-1">৳ ০</h3>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">অর্থ বিভাগ কর্তৃক যাচাইকৃত</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 border border-teal-100 shadow-sm card-hover">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">মোট অনুদান গ্রহণ</p>
+              <h3 id="stat-donations-in" class="text-2xl sm:text-3xl font-bold text-teal-800 mt-1">৳ ০</h3>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-arrow-down-to-bracket"></i>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 mt-3">দাতা সদস্য ও শুভানুধ্যায়ী</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-emerald-900 to-emerald-800 text-white rounded-2xl p-5 shadow-md card-hover">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold text-emerald-200 uppercase">বর্তমান নিট তহবিল (Balance)</p>
+              <h3 id="stat-net-fund" class="text-2xl sm:text-3xl font-bold text-amber-300 mt-1">৳ ০</h3>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-white/10 text-amber-300 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+          </div>
+          <p class="text-xs text-emerald-200 mt-3">অনুদান প্রদান ও অনুমোদিত ব্যয় বাদে</p>
+        </div>
+      </div>
+
+      <!-- Governance & Core Leadership Quick Strip -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 flex items-center gap-2">
+            <i class="fa-solid fa-sitemap text-emerald-700"></i> ফাউন্ডেশনের গাঠনিক কাঠামো ও শীর্ষ নেতৃত্ব
+          </h3>
+          <button onclick="navigateTo('councils')" class="text-sm font-semibold text-emerald-700 hover:underline">
+            সকল পরিষদ ও ছবি দেখুন <i class="fa-solid fa-arrow-right ml-1"></i>
+          </button>
+        </div>
+        <div id="dashboard-leadership-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+      </div>
+
+      <!-- Two-Column: Ongoing Programs & Public Notice Board -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 flex items-center gap-2">
+              <i class="fa-solid fa-seedling text-emerald-600"></i> ফাউন্ডেশনের চলমান ও প্রকাশিত কার্যক্রম
+            </h3>
+            <span class="text-xs bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-full font-semibold">শিক্ষা-সংস্কৃতি ও সমাজকল্যাণ</span>
+          </div>
+          <div id="public-activities-list" class="space-y-3"></div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 flex items-center gap-2 mb-4">
+              <i class="fa-solid fa-bullhorn text-amber-600"></i> অনুমোদিত নোটিশ বোর্ড
+            </h3>
+            <div id="public-notices-list" class="space-y-3"></div>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-100 bg-emerald-50/70 rounded-xl p-3.5">
+            <p class="text-xs font-bold text-emerald-900 mb-1">
+              <i class="fa-solid fa-shield-check text-emerald-700 mr-1"></i> একক চূড়ান্ত অনুমোদন নীতিমালা:
+            </p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              প্রতিটি বিভাগের নিজস্ব নিয়ন্ত্রণ ও প্রাথমিক অনুমোদনের পর ফাউন্ডেশনের সভাপতি <strong>Md Rasel Talukder</strong> নিজস্ব পাসওয়ার্ডে লগইন করে চূড়ান্ত অনুমোদন নিশ্চিত করেন (সভাপতির অনুপস্থিতিতে একমাত্র তাঁর অনুমতিক্রমে সাধারণ সম্পাদক <strong>Md Sayful Islam</strong> দায়িত্ব পালন করেন)।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 2: REGISTRATION & SUBSCRIPTION (নিবন্ধন ও চাঁদা)    -->
+    <!-- ========================================================= -->
+    <section id="view-register" class="hidden space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Online Registration Form (7 cols) -->
+        <div class="lg:col-span-7 bg-white rounded-2xl p-5 sm:p-7 border border-emerald-100 shadow-sm">
+          <div class="border-b border-slate-100 pb-4 mb-5">
+            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">অনলাইন নিবন্ধন ফর্ম</span>
+            <h2 class="font-serif text-xl sm:text-2xl font-bold text-emerald-950 mt-2">
+              তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন — সদস্য নিবন্ধন
+            </h2>
+            <p class="text-slate-600 text-sm mt-1">
+              সাধারণ সদস্য, উপদেষ্টা পরিষদ অথবা নির্দিষ্ট বিভাগের সদস্য হিসেবে নিবন্ধন করুন এবং আপনার প্রোফাইল ছবি যুক্ত করুন।
+            </p>
+          </div>
+
+          <form id="registration-form" onsubmit="handleMemberRegistration(event)" class="space-y-4">
+            <!-- Profile Photo Upload with Live Preview -->
+            <div class="bg-slate-50 border border-dashed border-emerald-300 rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4">
+              <div class="w-24 h-24 rounded-2xl bg-emerald-100 border-2 border-emerald-600 overflow-hidden flex items-center justify-center shrink-0 shadow-xs">
+                <img id="reg-photo-preview" src="" alt="Preview" class="w-full h-full object-cover hidden" />
+                <div id="reg-photo-placeholder" class="text-center text-emerald-700 p-2">
+                  <i class="fa-solid fa-camera text-2xl"></i>
+                  <span class="block text-[10px] font-bold mt-1">ছবি যুক্ত করুন</span>
+                </div>
+              </div>
+              <div class="flex-1 text-center sm:text-left">
+                <label class="block text-sm font-bold text-slate-800 mb-1">সদস্যের প্রোফাইল ছবি আপলোড</label>
+                <p class="text-xs text-slate-500 mb-2">পরিষদ ও সদস্য তালিকায় প্রদর্শনের জন্য স্পষ্ট ছবি নির্বাচন করুন (JPG/PNG)।</p>
+                <input type="file" id="reg-photo-input" accept="image/*" onchange="previewRegistrationPhoto(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-emerald-700 file:text-white hover:file:bg-emerald-800 cursor-pointer" />
+              </div>
+            </div>
+
+            <!-- ১. ব্যক্তিগত ও সাংগঠনিক তথ্য -->
+            <div class="pt-2">
+              <h3 class="text-sm font-bold text-emerald-900 border-b border-emerald-100 pb-1.5 mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-user-check text-emerald-700"></i> ১. ব্যক্তিগত ও সাংগঠনিক তথ্য
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">নিবন্ধনের ধরন / পরিষদ নির্বাচন *</label>
+                  <select id="reg-council" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+                    <option value="সাধারণ সদস্য">সাধারণ সদস্য (General Member)</option>
+                    <option value="উপদেষ্টা পরিষদ">উপদেষ্টা পরিষদ সদস্য (Advisory Council)</option>
+                    <option value="কার্যনির্বাহী পরিষদ">কার্যনির্বাহী পরিষদ (Executive Committee)</option>
+                    <option value="অর্থ বিভাগ">অর্থ বিভাগ (Finance Department)</option>
+                    <option value="শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ">শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ</option>
+                    <option value="অডিট বিভাগ">অডিট বিভাগ (Audit Department)</option>
+                    <option value="বাজেট অনুমোদন বিভাগ">বাজেট অনুমোদন বিভাগ (Budget Approval)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">পদবি / ভূমিকা (Designation) *</label>
+                  <input type="text" id="reg-designation" required placeholder="যেমন: সাধারণ সদস্য / উপদেষ্টা / বিভাগীয় সদস্য" value="সাধারণ সদস্য" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">পূর্ণ নাম (বাংলা বা ইংরেজিতে) <span class="text-rose-600">*</span></label>
+                  <input type="text" id="reg-name" required placeholder="আপনার পুরো নাম লিখুন" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">পিতা / মাতার নাম <span class="text-rose-600">*</span></label>
+                  <input type="text" id="reg-guardian" required placeholder="পিতা বা মাতার নাম" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">মোবাইল নম্বর <span class="text-rose-600">*</span></label>
+                  <input type="tel" id="reg-phone" required placeholder="০১৭xxxxxxxx" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">ইমেইল ঠিকানা</label>
+                  <input type="email" id="reg-email" placeholder="example@gmail.com" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">রক্তের গ্রুপ</label>
+                  <select id="reg-blood" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+" selected>O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">পেশা <span class="text-rose-600">*</span></label>
+                  <input type="text" id="reg-profession" required placeholder="শিক্ষার্থী / চাকরিজীবী / ব্যবসায়ী" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">ব্যক্তিগত লগইন পাসওয়ার্ড সেট করুন <span class="text-rose-600">*</span></label>
+                  <input type="password" id="reg-password" required placeholder="কমপক্ষে ৪ অক্ষরের পাসওয়ার্ড" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ২. বিভাগ ও এলাকা নির্বাচন -->
+            <div class="pt-2">
+              <h3 class="text-sm font-bold text-emerald-900 border-b border-emerald-100 pb-1.5 mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-location-dot text-emerald-700"></i> ২. বিভাগ ও এলাকা নির্বাচন
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">প্রশাসনিক বিভাগ <span class="text-rose-600">*</span></label>
+                  <select id="reg-division" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+                    <option value="" selected disabled>বিভাগ নির্বাচন করুন</option>
+                    <option value="ঢাকা বিভাগ">ঢাকা বিভাগ</option>
+                    <option value="চট্টগ্রাম বিভাগ">চট্টগ্রাম বিভাগ</option>
+                    <option value="রাজশাহী বিভাগ">রাজশাহী বিভাগ</option>
+                    <option value="খুলনা বিভাগ">খুলনা বিভাগ</option>
+                    <option value="বরিশাল বিভাগ">বরিশাল বিভাগ</option>
+                    <option value="সিলেট বিভাগ">সিলেট বিভাগ</option>
+                    <option value="রংপুর বিভাগ">রংপুর বিভাগ</option>
+                    <option value="ময়মনসিংহ বিভাগ">ময়মনসিংহ বিভাগ</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">জেলা <span class="text-rose-600">*</span></label>
+                  <input type="text" id="reg-district" required placeholder="যেমন: ব্রাহ্মণবাড়িয়া" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">থানা / উপজেলা <span class="text-rose-600">*</span></label>
+                  <input type="text" id="reg-thana" required placeholder="যেমন: নাসিরনগর" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">গ্রাম / বাড়ি ও বিস্তারিত ঠিকানা <span class="text-rose-600">*</span></label>
+                <input type="text" id="reg-address" required placeholder="গ্রাম/বাড়ি: তালুকদার বাড়ি, ডাকঘর..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+              </div>
+            </div>
+
+            <!-- ৩. আবেদনের বিবরণ ও ক্যাটাগরি -->
+            <div class="pt-2">
+              <h3 class="text-sm font-bold text-emerald-900 border-b border-emerald-100 pb-1.5 mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-file-lines text-emerald-700"></i> ৩. আবেদনের বিবরণ
+              </h3>
+              <div class="mb-3">
+                <label class="block text-xs font-bold text-slate-700 mb-1">আবেদনের ক্যাটাগরি <span class="text-rose-600">*</span></label>
+                <select id="reg-app-type" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none bg-white">
+                  <option value="সদস্য পদ যাচাই (Member Verification)">সদস্য পদ যাচাই (Member Verification)</option>
+                  <option value="সাধারণ প্রজেক্ট বা উদ্যোগ (General Project)">সাধারণ প্রজেক্ট বা উদ্যোগ (General Project)</option>
+                  <option value="আর্থিক অনুদান বা সহায়তা (Grant)">আর্থিক অনুদান বা সহায়তা (Grant)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">বিস্তারিত বিবরণ বা উদ্দেশ্য</label>
+                <textarea id="reg-description" rows="3" placeholder="আপনার আবেদন, সামাজিক উদ্যোগ বা প্রস্তাবের সংক্ষিপ্ত বিবরণ এখানে লিখুন..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none"></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-800 to-emerald-700 hover:from-emerald-900 hover:to-emerald-800 text-white font-bold text-base shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-circle-check"></i> নিবন্ধন সম্পন্ন করুন ও নিবন্ধন রসিদ নিন
+            </button>
+          </form>
+        </div>
+
+        <!-- Monthly Subscription / Chanda Payment Box (5 cols) -->
+        <div id="chanda-section" class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-amber-200 shadow-sm">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div>
+                <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950">সদস্যদের মাসিক চাঁদা প্রদান</h3>
+                <p class="text-xs text-slate-500">অর্থ বিভাগ (Md Sakibul Talukder ও Md Jahidul Islam)</p>
+              </div>
+            </div>
+
+            <form onsubmit="handleChandaPayment(event)" class="space-y-3.5">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">সদস্য নির্বাচন করুন *</label>
+                <select id="chanda-member-select" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white focus:ring-2 focus:ring-amber-500 focus:outline-none"></select>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">চাঁদার মাস *</label>
+                  <select id="chanda-month" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
+                    <option value="নভেম্বর ২০২৬">নভেম্বর ২০২৬</option>
+                    <option value="ডিসেম্বর ২০২৬">ডিসেম্বর ২০২৬</option>
+                    <option value="অক্টোবর ২০২৬">অক্টোবর ২০২৬</option>
+                    <option value="বার্ষিক এককালীন">বার্ষিক এককালীন</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">চাঁদার পরিমাণ (টাকা) *</label>
+                  <input type="number" id="chanda-amount" required min="50" value="500" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm font-bold text-emerald-900" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">মাধ্যম *</label>
+                  <select id="chanda-method" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
+                    <option value="bKash (বিকাশ)">bKash (বিকাশ)</option>
+                    <option value="Nagad (নগদ)">Nagad (নগদ)</option>
+                    <option value="Rocket (রকেট)">Rocket (রকেট)</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="নগদ ক্যাশ (অর্থ সম্পাদক)">নগদ ক্যাশ (অর্থ সম্পাদক)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">TrxID / রসিদ নং *</label>
+                  <input type="text" id="chanda-trx" required placeholder="যেমন: BKA8923X1" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" />
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-emerald-950 font-bold text-sm shadow transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-receipt"></i> চাঁদা জমা দিন ও ডিজিটাল রসিদ / রিসিট নিন
+              </button>
+            </form>
+          </div>
+
+          <!-- Recent Verified Subscriptions -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
+            <h4 class="font-bold text-sm text-emerald-950 mb-3 flex items-center justify-between">
+              <span>সাম্প্রতিক চাঁদা জমার তালিকা ও রসিদ</span>
+              <span class="text-xs font-normal text-emerald-700">সুরক্ষিত</span>
+            </h4>
+            <div id="recent-chanda-list" class="space-y-2.5 max-h-64 overflow-y-auto pr-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3: COUNCILS & LEADERSHIP WITH PHOTO UPLOAD        -->
+    <!-- ========================================================= -->
+    <section id="view-councils" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-emerald-100 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-emerald-950">
+            ফাউন্ডেশনের পরিষদসমূহ ও সদস্যদের প্রোফাইল (ছবি সংযোজন সুবিধা)
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            প্রতিটি পরিষদের প্রধান ও সদস্যদের প্রোফাইল কার্ডে সরাসরি <strong class="text-emerald-800">"ছবি পরিবর্তন / যোগ করুন"</strong> বাটনে ক্লিক করে ছবি আপলোড ও সংরক্ষণ করা যাবে।
+          </p>
+        </div>
+        <button onclick="navigateTo('register')" class="px-4 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white text-sm font-semibold shrink-0 flex items-center gap-2">
+          <i class="fa-solid fa-user-plus"></i> পরিষদে নতুন সদস্য যোগ করুন
+        </button>
+      </div>
+
+      <!-- Council Filter Tabs -->
+      <div class="flex flex-wrap gap-2">
+        <button onclick="filterCouncil('ALL')" class="council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800 text-white" data-filter="ALL">সকল পরিষদ ও সদস্য</button>
+        <button onclick="filterCouncil('উপদেষ্টা পরিষদ')" class="council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50" data-filter="উপদেষ্টা পরিষদ">উপদেষ্টা পরিষদ</button>
+        <button onclick="filterCouncil('কার্যনির্বাহী পরিষদ')" class="council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50" data-filter="কার্যনির্বাহী পরিষদ">কার্যনির্বাহী পরিষদ ও Admin</button>
+        <button onclick="filterCouncil('বিভাগীয় প্রধান')" class="council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50" data-filter="বিভাগীয় প্রধান">বিভাগীয় সম্পাদকবৃন্দ</button>
+        <button onclick="filterCouncil('সাধারণ সদস্য')" class="council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50" data-filter="সাধারণ সদস্য">সাধারণ সদস্যবৃন্দ</button>
+      </div>
+
+      <div id="councils-roster-container" class="space-y-8"></div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 4: DEPARTMENT PORTALS, LOGIN/LOGOUT & CONTROLS    -->
+    <!-- ========================================================= -->
+    <section id="view-portals" class="hidden space-y-6">
+      <!-- Top Control Strip inside Portals -->
+      <div class="bg-gradient-to-r from-emerald-950 to-emerald-900 text-white rounded-2xl p-5 sm:p-6 shadow-md border border-emerald-800">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-300">বিভাগীয় নিয়ন্ত্রণ, নিরাপত্তা ও অনুমোদন ব্যবস্থা</span>
+            <h2 id="portal-active-title" class="font-serif text-xl sm:text-2xl font-bold mt-1">
+              বিভাগীয় পোর্টালসমূহ — লগইন, লগআউট, অনুমোদন, বাতিল, সংরক্ষণ ও রসিদ
+            </h2>
+            <p id="portal-active-subtitle" class="text-emerald-200 text-sm mt-1">
+              প্রতিটি বিভাগের নিজস্ব পাসওয়ার্ড লগইন ও নিয়ন্ত্রণ প্যানেল রয়েছে। সভাপতি Md Rasel Talukder চূড়ান্ত অনুমোদনের একক অধিকারী।
+            </p>
+          </div>
+
+          <!-- President-Only Delegation Toggle -->
+          <div class="bg-emerald-950/95 border border-amber-400/60 rounded-xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <div>
+              <p class="text-xs font-bold text-amber-300"><i class="fa-solid fa-crown mr-1"></i>সভাপতির অনুপস্থিতিতে দায়িত্ব হস্তান্তর:</p>
+              <p class="text-[11px] text-emerald-200">শুধুমাত্র সভাপতি লগইন অবস্থায় সাধারণ সম্পাদককে দায়িত্ব দিতে পারবেন</p>
+            </div>
+            <label class="inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="president-absent-toggle" onchange="togglePresidentAbsence(this.checked)" class="sr-only peer" />
+              <div class="relative w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+              <span id="absent-status-label" class="ms-2 text-xs font-bold text-white">সভাপতি সক্রিয়</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Portal Sub-Navigation Pills -->
+        <div class="mt-5 pt-4 border-t border-emerald-800 flex flex-wrap gap-2">
+          <button onclick="selectPortalTab('president')" id="ptab-president" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-400 text-emerald-950">
+            👑 সভাপতি পোর্টাল (Md Rasel Talukder)
+          </button>
+          <button onclick="selectPortalTab('admin')" id="ptab-admin" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            🛡️ Admin Panel
+          </button>
+          <button onclick="selectPortalTab('advisor')" id="ptab-advisor" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            🎓 উপদেষ্টা পরিষদ
+          </button>
+          <button onclick="selectPortalTab('finance')" id="ptab-finance" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            💰 অর্থ বিভাগ
+          </button>
+          <button onclick="selectPortalTab('education')" id="ptab-education" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            📚 শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা
+          </button>
+          <button onclick="selectPortalTab('audit')" id="ptab-audit" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            🔍 অডিট বিভাগ
+          </button>
+          <button onclick="selectPortalTab('budget')" id="ptab-budget" class="ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700">
+            📑 বাজেট অনুমোদন বিভাগ
+          </button>
+        </div>
+      </div>
+
+      <!-- DYNAMIC PORTAL CONTENT AREA -->
+      <div id="portal-content-area"></div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 5: DONATIONS GIVEN & RECEIVED LEDGER              -->
+    <!-- ========================================================= -->
+    <section id="view-donations" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-emerald-100 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-bold">নিরাপত্তা যাচাইকৃত আর্থিক রেজিস্টার</span>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-emerald-950 mt-2">
+            ফাউন্ডেশনের অনুদান গ্রহণ (Received) ও অনুদান প্রদান (Given) তালিকা
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            প্রতিটি অনুদানের জন্য অনুমোদন, বাতিল, সংরক্ষণ, নিরাপত্তা লক এবং ডিজিটাল রসিদ / রিসিট প্রিন্ট করার সুবিধা রয়েছে।
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <input type="text" id="donation-search" oninput="renderDonationsView()" placeholder="দাতা, গ্রহীতা বা রসিদ নং খুঁজুন..." class="rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Add Donation Entry Form -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm">
+        <h3 class="font-serif text-lg font-bold text-emerald-950 mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-file-shield text-emerald-700"></i> নতুন অনুদান গ্রহণ বা প্রদান এন্ট্রি যুক্ত করুন
+        </h3>
+        <form onsubmit="handleAddDonation(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">ধরন *</label>
+            <select id="don-type" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
+              <option value="received">অনুদান গ্রহণ (Received)</option>
+              <option value="given">অনুদান প্রদান (Given / Aid)</option>
+            </select>
+          </div>
+          <div class="lg:col-span-2">
+            <label class="block text-xs font-bold text-slate-700 mb-1">দাতা অথবা গ্রহীতার নাম ও পরিচয় *</label>
+            <input type="text" id="don-party" required placeholder="যেমন: আলহাজ্ব আব্দুর রহমান / অসহায় চিকিৎসা তহবিল" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">পরিমাণ (টাকা) *</label>
+            <input type="number" id="don-amount" required min="100" placeholder="5000" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm font-bold" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">খাত / উদ্দেশ্য *</label>
+            <input type="text" id="don-purpose" required placeholder="শিক্ষাবৃত্তি / চিকিৎসা / যাকাত" class="w-full rounded-xl border border-slate-300 px-3 py-2.5 text-sm" />
+          </div>
+          <div class="flex items-end">
+            <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow transition">
+              <i class="fa-solid fa-floppy-disk mr-1"></i> সংরক্ষণ করুন
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Two Side-by-Side Secure Ledgers -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Donations Received -->
+        <div class="bg-white rounded-2xl border border-teal-200 shadow-sm overflow-hidden">
+          <div class="bg-teal-900 text-white px-5 py-3.5 flex items-center justify-between">
+            <h3 class="font-serif font-bold text-base sm:text-lg flex items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-down text-amber-300"></i> অনুদান গ্রহণ তালিকা (Received)
+            </h3>
+            <span id="badge-total-received" class="px-2.5 py-0.5 rounded-full bg-teal-800 text-amber-300 text-xs font-bold">৳ ০</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-slate-50 border-b text-xs text-slate-600 uppercase">
+                  <th class="p-3">রসিদ ও তারিখ</th>
+                  <th class="p-3">দাতার নাম ও খাত</th>
+                  <th class="p-3 text-right">পরিমাণ</th>
+                  <th class="p-3 text-center">অ্যাকশন ও রসিদ</th>
+                </tr>
+              </thead>
+              <tbody id="table-donations-received" class="divide-y divide-slate-100"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Donations Given -->
+        <div class="bg-white rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+          <div class="bg-emerald-950 text-white px-5 py-3.5 flex items-center justify-between">
+            <h3 class="font-serif font-bold text-base sm:text-lg flex items-center gap-2">
+              <i class="fa-solid fa-circle-arrow-up text-amber-400"></i> অনুদান প্রদান তালিকা (Given)
+            </h3>
+            <span id="badge-total-given" class="px-2.5 py-0.5 rounded-full bg-emerald-800 text-amber-300 text-xs font-bold">৳ ০</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="bg-slate-50 border-b text-xs text-slate-600 uppercase">
+                  <th class="p-3">ভাউচার ও তারিখ</th>
+                  <th class="p-3">গ্রহীতা ও উদ্দেশ্য</th>
+                  <th class="p-3 text-right">পরিমাণ</th>
+                  <th class="p-3 text-center">অ্যাকশন ও রসিদ</th>
+                </tr>
+              </thead>
+              <tbody id="table-donations-given" class="divide-y divide-slate-100"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-emerald-950 text-emerald-200 border-t-4 border-amber-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+        <div>
+          <p class="font-serif text-amber-300 font-bold text-base mb-1">বিসমিল্লাহির রহমানির রহিম</p>
+          <h4 class="font-serif text-white font-bold text-lg">তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন</h4>
+          <p class="text-xs text-emerald-300 mt-1 leading-relaxed">
+            ঐক্য, শিক্ষা, সংস্কৃতি, ক্রীড়া ও মানবকল্যাণে নিবেদিত একটি পাসওয়ার্ড-সুরক্ষিত ও সুশৃঙ্খল সামাজিক সংগঠন।
+          </p>
+        </div>
+        <div>
+          <h5 class="font-bold text-white mb-2">শীর্ষ নেতৃত্ব ও প্রশাসন</h5>
+          <ul class="space-y-1 text-xs text-emerald-300">
+            <li>• প্রধান উপদেষ্টা: <strong class="text-white">Md Humayun Kabir Talukder</strong></li>
+            <li>• সভাপতি (একক চূড়ান্ত অনুমোদক): <strong class="text-white">Md Rasel Talukder</strong></li>
+            <li>• সিনিয়র সহ-সভাপতি (Admin প্রধান): <strong class="text-white">Md Ahsanul Haque Talukder</strong></li>
+            <li>• সাধারণ সম্পাদক: <strong class="text-white">Md Sayful Islam</strong></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-white mb-2">বিভাগীয় সম্পাদকবৃন্দ</h5>
+          <ul class="space-y-1 text-xs text-emerald-300">
+            <li>• অর্থ সম্পাদক: <strong class="text-white">Md Sakibul Talukder</strong> (সহকারী: Md Jahidul Islam)</li>
+            <li>• শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা: <strong class="text-white">Md Rayhan Talukder</strong></li>
+            <li>• অডিট বিষয়ক সম্পাদক: <strong class="text-white">Md Riyad Talukder</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 pt-4 border-t border-emerald-900 text-center text-xs text-emerald-400">
+        © ২০২৬ তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন — সর্বস্বত্ব সংরক্ষিত।
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT APPLICATION LOGIC                              -->
+  <!-- ========================================================= -->
+  <script>
+    const STORAGE_KEY = 'tbswf_secure_portal_v2';
+
+    const ROLE_META = {
+      public: {
+        title: '🌐 সাধারণ দর্শক (পাবলিক মোড)',
+        subtitle: 'নিয়ন্ত্রণ বা অনুমোদনের জন্য নিজ নিজ পোর্টালে পাসওয়ার্ড দিয়ে লগইন করুন',
+        holder: 'Public Viewer',
+        portalTab: 'president'
+      },
+      president: {
+        title: '👑 সভাপতি: Md Rasel Talukder (সর্বোচ্চ নিয়ন্ত্রণ)',
+        subtitle: 'চূড়ান্ত অনুমোদন, বাতিল, নিরাপত্তা লক ও পাসওয়ার্ড পরিবর্তনের পূর্ণ ক্ষমতা সক্রিয়',
+        holder: 'Md Rasel Talukder',
+        portalTab: 'president'
+      },
+      secretary: {
+        title: '📋 সাধারণ সম্পাদক: Md Sayful Islam',
+        subtitle: 'সভাপতির অনুমোদিত অনুপস্থিতিতে ভারপ্রাপ্ত প্রধানের দায়িত্ব',
+        holder: 'Md Sayful Islam',
+        portalTab: 'president'
+      },
+      admin: {
+        title: '🛡️ Admin প্রধান: Md Ahsanul Haque Talukder',
+        subtitle: 'সিনিয়র সহ-সভাপতি ও কেন্দ্রীয় প্রশাসনিক প্যানেল',
+        holder: 'Md Ahsanul Haque Talukder',
+        portalTab: 'admin'
+      },
+      advisor: {
+        title: '🎓 প্রধান উপদেষ্টা: Md Humayun Kabir Talukder',
+        subtitle: 'উপদেষ্টা পরিষদ পোর্টাল ও নীতিগত অনুমোদন',
+        holder: 'Md Humayun Kabir Talukder',
+        portalTab: 'advisor'
+      },
+      finance: {
+        title: '💰 অর্থ বিভাগ: Md Sakibul Talukder ও Md Jahidul Islam',
+        subtitle: 'চাঁদা আদায়, আয়-ব্যয় হিসাব, রসিদ ও আর্থিক নিরাপত্তা পোর্টাল',
+        holder: 'Md Sakibul Talukder',
+        portalTab: 'finance'
+      },
+      education: {
+        title: '📚 শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা: Md Rayhan Talukder',
+        subtitle: 'বিভাগীয় কার্যক্রম সংরক্ষণ, অনুমোদন ও রসিদ পোর্টাল',
+        holder: 'Md Rayhan Talukder',
+        portalTab: 'education'
+      },
+      audit: {
+        title: '🔍 অডিট বিভাগ: Md Riyad Talukder',
+        subtitle: 'নিরীক্ষা রিপোর্ট, নিরাপত্তা যাচাই ও ভাউচার অডিট পোর্টাল',
+        holder: 'Md Riyad Talukder',
+        portalTab: 'audit'
+      },
+      budget: {
+        title: '📑 বাজেট অনুমোদন বিভাগ',
+        subtitle: 'বাজেট আবেদন, বিভাগীয় যাচাই ও বিল পাস পোর্টাল',
+        holder: 'Budget Committee',
+        portalTab: 'budget'
+      }
+    };
+
+    const defaultState = {
+      currentRole: 'public',
+      presidentAbsent: false,
+      activePortalTab: 'president',
+      rolePasswords: {
+        president: 'rasel@2026',
+        secretary: 'sayful123',
+        admin: 'admin123',
+        advisor: 'advisory123',
+        finance: 'finance123',
+        education: 'edu123',
+        audit: 'audit123',
+        budget: 'budget123'
+      },
+      securityLogs: [
+        { time: '২০২৬-১১-১৫ ১০:০০ AM', actor: 'System Security', action: 'সিস্টেম নিরাপত্তা এনক্রিপশন ও রোল-বেসড লক সক্রিয় করা হয়েছে।' }
+      ],
+      members: [
+        {
+          id: 'TBSWF-ADV-01',
+          name: 'Md Humayun Kabir Talukder',
+          roleKey: 'advisor',
+          council: 'উপদেষ্টা পরিষদ',
+          designation: 'প্রধান উপদেষ্টা (Chief Advisor)',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000001',
+          blood: 'O+',
+          profession: 'বিশিষ্ট সমাজসেবক ও অভিভাবক',
+          address: 'তালুকদার বাড়ি',
+          password: 'advisory123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-EXE-01',
+          name: 'Md Rasel Talukder',
+          roleKey: 'president',
+          council: 'কার্যনির্বাহী পরিষদ',
+          designation: 'সভাপতি (President & Supreme Controller)',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000002',
+          blood: 'B+',
+          profession: 'ফাউন্ডেশন প্রধান ও চূড়ান্ত অনুমোদক',
+          address: 'তালুকদার বাড়ি',
+          password: 'rasel@2026',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-ADM-01',
+          name: 'Md Ahsanul Haque Talukder',
+          roleKey: 'admin',
+          council: 'কার্যনির্বাহী পরিষদ',
+          designation: 'সিনিয়র সহ-সভাপতি ও Admin Panel প্রধান',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000003',
+          blood: 'A+',
+          profession: 'প্রশাসনিক ও সিস্টেম নিয়ন্ত্রক',
+          address: 'তালুকদার বাড়ি',
+          password: 'admin123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-EXE-02',
+          name: 'Md Sayful Islam',
+          roleKey: 'secretary',
+          council: 'কার্যনির্বাহী পরিষদ',
+          designation: 'সাধারণ সম্পাদক (General Secretary)',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000004',
+          blood: 'O+',
+          profession: 'সহকারী প্রধান (সভাপতির অনুপস্থিতিতে দায়িত্বপ্রাপ্ত)',
+          address: 'তালুকদার বাড়ি',
+          password: 'sayful123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-FIN-01',
+          name: 'Md Sakibul Talukder',
+          roleKey: 'finance',
+          council: 'অর্থ বিভাগ',
+          designation: 'অর্থ বিষয়ক সম্পাদক (Finance Secretary)',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000005',
+          blood: 'AB+',
+          profession: 'অর্থ বিভাগ প্রধান',
+          address: 'তালুকদার বাড়ি',
+          password: 'finance123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-FIN-02',
+          name: 'Md Jahidul Islam',
+          roleKey: 'finance',
+          council: 'অর্থ বিভাগ',
+          designation: 'সহকারী অর্থ বিষয়ক সম্পাদক',
+          isHead: false,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000006',
+          blood: 'B+',
+          profession: 'সহকারী অর্থ নিয়ন্ত্রক',
+          address: 'তালুকদার বাড়ি',
+          password: 'finance123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-EDU-01',
+          name: 'Md Rayhan Talukder',
+          roleKey: 'education',
+          council: 'শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ',
+          designation: 'শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা সম্পাদক',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000007',
+          blood: 'O+',
+          profession: 'বিভাগীয় প্রধান',
+          address: 'তালুকদার বাড়ি',
+          password: 'edu123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-AUD-01',
+          name: 'Md Riyad Talukder',
+          roleKey: 'audit',
+          council: 'অডিট বিভাগ',
+          designation: 'অডিট বিষয়ক সম্পাদক (Audit Secretary)',
+          isHead: true,
+          guardian: 'তালুকদার পরিবার',
+          phone: '01711-000008',
+          blood: 'A+',
+          profession: 'অডিট বিভাগ প্রধান',
+          address: 'তালুকদার বাড়ি',
+          password: 'audit123',
+          photo: '',
+          approved: true
+        },
+        {
+          id: 'TBSWF-MEM-101',
+          name: 'Md Tanvir Talukder',
+          roleKey: 'member',
+          council: 'সাধারণ সদস্য',
+          designation: 'সাধারণ সদস্য',
+          isHead: false,
+          guardian: 'মোঃ আব্দুল করিম তালুকদার',
+          phone: '01811-223344',
+          blood: 'O+',
+          profession: 'শিক্ষার্থী',
+          address: 'তালুকদার বাড়ি',
+          password: '123',
+          photo: '',
+          approved: true
+        }
+      ],
+      chandaRecords: [
+        { id: 'CHD-1001', memberId: 'TBSWF-EXE-01', memberName: 'Md Rasel Talukder', month: 'নভেম্বর ২০২৬', amount: 2000, method: 'bKash (বিকাশ)', trx: 'BKA99102A', date: '২০২৬-১১-০২', status: 'approved', locked: true },
+        { id: 'CHD-1002', memberId: 'TBSWF-ADV-01', memberName: 'Md Humayun Kabir Talukder', month: 'নভেম্বর ২০২৬', amount: 3000, method: 'Bank Transfer', trx: 'BNK44510Z', date: '২০২৬-১১-০৩', status: 'approved', locked: true },
+        { id: 'CHD-1003', memberId: 'TBSWF-FIN-01', memberName: 'Md Sakibul Talukder', month: 'নভেম্বর ২০২৬', amount: 1500, method: 'Nagad (নগদ)', trx: 'NGD77312M', date: '২০২৬-১১-০৫', status: 'approved', locked: false },
+        { id: 'CHD-1004', memberId: 'TBSWF-MEM-101', memberName: 'Md Tanvir Talukder', month: 'নভেম্বর ২০২৬', amount: 500, method: 'bKash (বিকাশ)', trx: 'BKA55219P', date: '২০২৬-১১-১০', status: 'pending', locked: false }
+      ],
+      expenses: [
+        { id: 'EXP-201', title: 'দরিদ্র শিক্ষার্থীদের বই ও খাতা বিতরণ', amount: 4500, date: '২০২৬-১১-০৬', recordedBy: 'Md Sakibul Talukder', status: 'approved', locked: true },
+        { id: 'EXP-202', title: 'বার্ষিক ক্রীড়া ও সাংস্কৃতিক প্রতিযোগিতা প্রস্তুতি', amount: 3000, date: '২০২৬-১১-০৯', recordedBy: 'Md Jahidul Islam', status: 'pending', locked: false }
+      ],
+      donations: [
+        { id: 'DON-IN-01', type: 'received', party: 'Md Humayun Kabir Talukder (বিশেষ কল্যাণ অনুদান)', amount: 25000, purpose: 'স্থায়ী সমাজকল্যাণ তহবিল', date: '২০২৬-১১-০১', status: 'approved', locked: true },
+        { id: 'DON-IN-02', type: 'received', party: 'প্রবাসী শুভানুধ্যায়ী তহবিল (তালুকদার পরিবার)', amount: 15000, purpose: 'চিকিৎসা ও শিক্ষাবৃত্তি', date: '২০২৬-১১-০৪', status: 'approved', locked: false },
+        { id: 'DON-OUT-01', type: 'given', party: 'মোঃ রহিম উদ্দিন (জরুরি চিকিৎসা সহায়তা)', amount: 8000, purpose: 'চিকিৎসা অনুদান', date: '২০২৬-১১-০৭', status: 'approved', locked: true },
+        { id: 'DON-OUT-02', type: 'given', party: 'মেধাবী শিক্ষার্থী শিক্ষাবৃত্তি (৫ জন)', amount: 7500, purpose: 'শিক্ষা বৃত্তি প্রদান', date: '২০২৬-১১-১১', status: 'pending', locked: false }
+      ],
+      budgetRequests: [
+        {
+          id: 'BDG-501',
+          department: 'শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ',
+          requestedBy: 'Md Rayhan Talukder',
+          title: 'বার্ষিক প্রকাশনা ম্যাগাজিন ও মেধাবৃত্তি অনুষ্ঠান ২০২৬',
+          amount: 12000,
+          description: 'ফাউন্ডেশনের বার্ষিক স্মরণিকা মুদ্রণ ও কৃতি শিক্ষার্থীদের সম্মাননা ক্রেস্ট প্রদান।',
+          date: '২০২৬-১১-১২',
+          deptApproved: true,
+          finalApproved: false,
+          cancelled: false,
+          locked: false,
+          approvedBy: ''
+        },
+        {
+          id: 'BDG-502',
+          department: 'অর্থ বিভাগ',
+          requestedBy: 'Md Sakibul Talukder',
+          title: 'শীতবস্ত্র বিতরণ কর্মসূচি প্রাথমিক বাজেট',
+          amount: 15000,
+          description: 'এলাকার অসহায় পরিবারের মাঝে কম্বল ও শীতবস্ত্র বিতরণের বিল ও বাজেট অনুমোদন।',
+          date: '২০২৬-১১-১৩',
+          deptApproved: false,
+          finalApproved: false,
+          cancelled: false,
+          locked: false,
+          approvedBy: ''
+        }
+      ],
+      eduActivities: [
+        {
+          id: 'EDU-301',
+          category: 'শিক্ষা ও বৃত্তি',
+          title: 'তালুকদার বাড়ি মেধাবৃত্তি ও কৃতি শিক্ষার্থী সংবর্ধনা ২০২৬',
+          date: '২০২৬-১১-১০',
+          summary: 'এসএসসি ও এইচএসসি পরীক্ষায় জিপিএ-৫ প্রাপ্ত শিক্ষার্থীদের মাঝে বৃত্তি ও সনদপত্র প্রদান করা হয়েছে।',
+          author: 'Md Rayhan Talukder',
+          status: 'approved',
+          locked: true
+        },
+        {
+          id: 'EDU-302',
+          category: 'ক্রীড়া ও সংস্কৃতি',
+          title: 'আন্তঃপরিবার প্রীতি ফুটবল টুর্নামেন্ট ও ইসলামিক সাংস্কৃতিক সন্ধ্যা',
+          date: '২০২৬-১১-০৫',
+          summary: 'যুবসমাজকে মাদকমুক্ত রাখতে ক্রীড়া প্রতিযোগিতা এবং কেরাত ও হামদ-নাত অনুষ্ঠানের আয়োজন সংরক্ষিত।',
+          author: 'Md Rayhan Talukder',
+          status: 'approved',
+          locked: false
+        }
+      ],
+      auditLogs: [
+        {
+          id: 'AUD-701',
+          period: 'নভেম্বর ২০২৬ (প্রথম পক্ষ)',
+          voucherChecked: 'CHD-1001 থেকে CHD-1004 এবং EXP-201',
+          finding: 'সকল রসিদ ও ব্যাংক/বিকাশ স্টেটমেন্ট শতভাগ সঠিক পাওয়া গেছে। কোনো আর্থিক অসঙ্গতি নেই।',
+          auditor: 'Md Riyad Talukder',
+          date: '২০২৬-১১-১২',
+          status: 'approved',
+          locked: true
+        }
+      ],
+      advisorNotes: [
+        {
+          id: 'ADV-901',
+          advisor: 'Md Humayun Kabir Talukder',
+          title: 'ফাউন্ডেশনের স্থায়ী তহবিল গঠন ও স্বচ্ছতা প্রসঙ্গে দিকনির্দেশনা',
+          message: 'প্রতিটি বিভাগের কার্যক্রম নিয়মিত অডিট করতে হবে এবং সমাজের প্রকৃত অসহায় মানুষদের অগ্রাধিকার ভিত্তিতে সহায়তা প্রদান করতে হবে।',
+          date: '২০২৬-১১-০৮',
+          status: 'approved',
+          locked: true
+        }
+      ],
+      notices: [
+        { id: 'NTC-01', title: 'মাসিক চাঁদা পরিশোধ সংক্রান্ত জরুরি বিজ্ঞপ্তি', date: '২০২৬-১১-১৪', body: 'সকল সম্মানিত সদস্যকে প্রতি মাসের ১০ তারিখের মধ্যে অনলাইন পোর্টাল বা অর্থ সম্পাদকের মাধ্যমে মাসিক চাঁদা পরিশোধ করার জন্য অনুরোধ করা হলো।' },
+        { id: 'NTC-02', title: 'শীতবস্ত্র বিতরণ কর্মসূচির প্রস্তুতি সভা', date: '২০২৬-১১-১২', body: 'সভাপতি Md Rasel Talukder মহোদয়ের নির্দেশক্রমে আগামী শুক্রবার বাদ আসর কার্যনির্বাহী পরিষদের সভা অনুষ্ঠিত হবে।' }
+      ]
+    };
+
+    let state = loadState();
+    let currentCouncilFilter = 'ALL';
+    let tempRegPhotoBase64 = '';
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          return {
+            ...defaultState,
+            ...parsed,
+            rolePasswords: { ...defaultState.rolePasswords, ...(parsed.rolePasswords || {}) }
+          };
+        }
+      } catch (e) {
+        console.error('State load error:', e);
+      }
+      return JSON.parse(JSON.stringify(defaultState));
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        showToast('স্টোরেজ পূর্ণ হওয়ায় ছবির আকার ছোট করে চেষ্টা করুন।', 'error');
+      }
+    }
+
+    function addSecurityLog(actor, action) {
+      const now = new Date().toLocaleString('bn-BD', { dateStyle: 'short', timeStyle: 'short' });
+      state.securityLogs.unshift({ time: now, actor, action });
+      if (state.securityLogs.length > 40) state.securityLogs.pop();
+      saveState();
+    }
+
+    // =========================================================================
+    // UI UTILITIES (TOASTS, MODALS, NAVIGATION)
+    // =========================================================================
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const bg = type === 'success' ? 'bg-emerald-900 border-emerald-500 text-white' :
+                 type === 'warning' ? 'bg-amber-600 border-amber-300 text-white' :
+                 'bg-rose-800 border-rose-400 text-white';
+      const icon = type === 'success' ? 'fa-circle-check text-amber-300' :
+                   type === 'warning' ? 'fa-triangle-exclamation text-white' : 'fa-circle-xmark text-white';
+
+      toast.className = `pointer-events-auto border-l-4 ${bg} px-4 py-3 rounded-xl shadow-xl flex items-start gap-3 text-sm font-medium transition-all duration-300`;
+      toast.innerHTML = `<i class="fa-solid ${icon} mt-0.5 text-base"></i><div class="flex-1">${message}</div>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(20px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3800);
+    }
+
+    function openModal(title, htmlBody, extraFooterBtn = '') {
+      document.getElementById('modal-title').innerHTML = title;
+      document.getElementById('modal-body').innerHTML = htmlBody;
+      document.getElementById('modal-footer').innerHTML = `
+        ${extraFooterBtn}
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-sm">বন্ধ করুন</button>
+      `;
+      const modal = document.getElementById('custom-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('custom-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function navigateTo(viewName) {
+      const views = ['dashboard', 'register', 'councils', 'portals', 'donations'];
+      views.forEach(v => {
+        document.getElementById(`view-${v}`).classList.add('hidden');
+        const btn = document.getElementById(`nav-${v}`);
+        if (btn) btn.className = 'nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-emerald-800/80 text-emerald-100 hover:bg-emerald-700';
+      });
+      document.getElementById(`view-${viewName}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`nav-${viewName}`);
+      if (activeBtn) activeBtn.className = 'nav-btn px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 transition bg-amber-400 text-emerald-950 shadow';
+
+      if (viewName === 'dashboard') renderDashboard();
+      if (viewName === 'register') renderRegisterView();
+      if (viewName === 'councils') renderCouncilsView();
+      if (viewName === 'portals') renderPortalsView();
+      if (viewName === 'donations') renderDonationsView();
+    }
+
+    function formatCurrency(num) {
+      return '৳ ' + Number(num || 0).toLocaleString('en-IN');
+    }
+
+    function getAvatarHTML(member, sizeClass = 'w-16 h-16') {
+      if (member.photo) {
+        return `<img src="${member.photo}" alt="${member.name}" class="${sizeClass} rounded-2xl object-cover border-2 border-emerald-600 shadow-xs" />`;
+      }
+      const initials = member.name.split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase();
+      return `
+        <div class="${sizeClass} rounded-2xl bg-gradient-to-br from-emerald-800 to-teal-700 text-amber-300 font-bold flex items-center justify-center border-2 border-amber-400/60 shadow-xs text-lg">
+          ${initials || '<i class="fa-solid fa-user"></i>'}
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // STRICT PASSWORD AUTHENTICATION, PRESIDENT LOGIN & LOGOUT SYSTEM
+    // =========================================================================
+    function updateHeaderAuthUI() {
+      const role = state.currentRole || 'public';
+      const meta = ROLE_META[role] || ROLE_META.public;
+      const dot = document.getElementById('role-status-dot');
+      const titleEl = document.getElementById('active-role-title');
+      const subEl = document.getElementById('active-role-sub');
+      const lockBadge = document.getElementById('security-lock-badge');
+      const btnsEl = document.getElementById('header-auth-buttons');
+
+      titleEl.innerText = meta.title;
+      subEl.innerText = meta.subtitle;
+
+      if (role === 'public') {
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-slate-400';
+        lockBadge.className = 'px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[10px] font-bold shrink-0';
+        lockBadge.innerHTML = '<i class="fa-solid fa-lock"></i> পাবলিক মোড';
+        btnsEl.innerHTML = `
+          <button onclick="openRoleLoginModal('president')" class="flex-1 px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-emerald-950 font-bold text-xs sm:text-sm shadow flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-crown"></i> সভাপতি লগইন (Md Rasel Talukder)
+          </button>
+          <button onclick="openRoleLoginModal('')" class="px-3.5 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white border border-emerald-600 font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-key"></i> বিভাগীয় লগইন
+          </button>
+        `;
+      } else {
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse';
+        lockBadge.className = 'px-2 py-0.5 rounded-md bg-emerald-700 text-amber-300 text-[10px] font-bold shrink-0';
+        lockBadge.innerHTML = '<i class="fa-solid fa-shield-check"></i> সুরক্ষিত সেশন';
+        btnsEl.innerHTML = `
+          <button onclick="navigateTo('portals'); selectPortalTab('${meta.portalTab}')" class="flex-1 px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold text-xs sm:text-sm shadow flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-gauge-high"></i> সক্রিয় পোর্টালে যান
+          </button>
+          <button onclick="logoutActiveRole()" class="px-3.5 py-2 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs sm:text-sm shadow flex items-center justify-center gap-1.5 transition">
+            <i class="fa-solid fa-right-from-bracket"></i> লগআউট (Logout)
+          </button>
+        `;
+      }
+
+      const toggle = document.getElementById('president-absent-toggle');
+      const label = document.getElementById('absent-status-label');
+      if (toggle) {
+        toggle.checked = state.presidentAbsent;
+        toggle.disabled = (state.currentRole !== 'president');
+      }
+      if (label) {
+        label.innerText = state.presidentAbsent ? 'সভাপতি অনুপস্থিত (সাধারণ সম্পাদক দায়িত্বে)' : 'সভাপতি সক্রিয়';
+      }
+    }
+
+    function openRoleLoginModal(preselectedRole = '') {
+      const isPres = preselectedRole === 'president';
+      openModal(
+        isPres ? '<i class="fa-solid fa-crown text-amber-400"></i> সভাপতি ব্যক্তিগত লগইন (Supreme Access)' : '<i class="fa-solid fa-key text-amber-400"></i> পোর্টাল ও বিভাগীয় নিরাপত্তা লগইন',
+        `
+        <form onsubmit="submitRoleLogin(event)" class="space-y-4">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-xs text-emerald-900">
+            <i class="fa-solid fa-shield-halved text-emerald-700 mr-1"></i>
+            ${isPres
+              ? '<strong>সভাপতি Md Rasel Talukder</strong>-এর একক নিয়ন্ত্রণ পোর্টাল। নিজস্ব পাসওয়ার্ড ছাড়া কেউ চূড়ান্ত অনুমোদন বা নিয়ন্ত্রণ করতে পারবে না।'
+              : 'সংশ্লিষ্ট বিভাগ বা পরিষদের নির্ধারিত পাসওয়ার্ড দিয়ে নিরাপদ সেশনে প্রবেশ করুন।'}
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">পোর্টাল / দায়িত্বশীল ভূমিকা নির্বাচন করুন *</label>
+            <select id="modal-login-role" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white font-semibold">
+              <option value="president" ${preselectedRole === 'president' ? 'selected' : ''}>👑 সভাপতি: Md Rasel Talukder (সর্বোচ্চ নিয়ন্ত্রক)</option>
+              <option value="secretary" ${preselectedRole === 'secretary' ? 'selected' : ''}>📋 সাধারণ সম্পাদক: Md Sayful Islam</option>
+              <option value="admin" ${preselectedRole === 'admin' ? 'selected' : ''}>🛡️ Admin প্রধান (সিনিয়র সহ-সভাপতি): Md Ahsanul Haque Talukder</option>
+              <option value="advisor" ${preselectedRole === 'advisor' ? 'selected' : ''}>🎓 প্রধান উপদেষ্টা: Md Humayun Kabir Talukder</option>
+              <option value="finance" ${preselectedRole === 'finance' ? 'selected' : ''}>💰 অর্থ বিভাগ: Md Sakibul Talukder / Md Jahidul Islam</option>
+              <option value="education" ${preselectedRole === 'education' ? 'selected' : ''}>📚 শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা: Md Rayhan Talukder</option>
+              <option value="audit" ${preselectedRole === 'audit' ? 'selected' : ''}>🔍 অডিট বিভাগ: Md Riyad Talukder</option>
+              <option value="budget" ${preselectedRole === 'budget' ? 'selected' : ''}>📑 বাজেট অনুমোদন বিভাগ</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">ব্যক্তিগত / বিভাগীয় পাসওয়ার্ড *</label>
+            <input type="password" id="modal-login-pass" required placeholder="আপনার গোপন পাসওয়ার্ড লিখুন" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-emerald-600 focus:outline-none" />
+          </div>
+
+          <button type="submit" class="w-full py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm shadow flex items-center justify-center gap-2">
+            <i class="fa-solid fa-unlock-keyhole"></i> যাচাই ও লগইন করুন
+          </button>
+
+          <details class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-600">
+            <summary class="font-bold text-slate-800 cursor-pointer">🔑 ডেমো পাসওয়ার্ড গাইড (পরীক্ষার জন্য ক্লিক করুন)</summary>
+            <ul class="mt-2 space-y-1 font-mono text-[11px]">
+              <li>• সভাপতি (Md Rasel Talukder): <strong>${state.rolePasswords.president}</strong></li>
+              <li>• সাধারণ সম্পাদক (Md Sayful Islam): <strong>${state.rolePasswords.secretary}</strong></li>
+              <li>• Admin Panel (Md Ahsanul Haque): <strong>${state.rolePasswords.admin}</strong></li>
+              <li>• প্রধান উপদেষ্টা (Md Humayun Kabir): <strong>${state.rolePasswords.advisor}</strong></li>
+              <li>• অর্থ বিভাগ (Sakibul / Jahidul): <strong>${state.rolePasswords.finance}</strong></li>
+              <li>• শিক্ষা-সংস্কৃতি ও ক্রীড়া (Rayhan): <strong>${state.rolePasswords.education}</strong></li>
+              <li>• অডিট বিভাগ (Md Riyad): <strong>${state.rolePasswords.audit}</strong></li>
+              <li>• বাজেট অনুমোদন বিভাগ: <strong>${state.rolePasswords.budget}</strong></li>
+            </ul>
+          </details>
+        </form>
+        `
+      );
+    }
+
+    function submitRoleLogin(e) {
+      e.preventDefault();
+      const role = document.getElementById('modal-login-role').value;
+      const pass = document.getElementById('modal-login-pass').value;
+      const expected = state.rolePasswords[role];
+
+      if (pass !== expected) {
+        addSecurityLog(ROLE_META[role]?.holder || role, 'ভুল পাসওয়ার্ড দিয়ে লগইনের ব্যর্থ চেষ্টা হয়েছে!');
+        showToast('ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন অথবা নিচের ডেমো পাসওয়ার্ড গাইড দেখুন।', 'error');
+        return;
+      }
+
+      if (role === 'secretary' && !state.presidentAbsent) {
+        showToast('সভাপতি Md Rasel Talukder বর্তমানে সক্রিয় আছেন। সাধারণ সম্পাদক পোর্টালে লগইন হলো, তবে চূড়ান্ত অনুমোদন সভাপতির অনুপস্থিতি চালু থাকলেই কার্যকর হবে।', 'warning');
+      }
+
+      state.currentRole = role;
+      state.activePortalTab = ROLE_META[role]?.portalTab || 'president';
+      saveState();
+      addSecurityLog(ROLE_META[role].holder, 'সফলভাবে পোর্টালে লগইন করেছেন।');
+      closeModal();
+      updateHeaderAuthUI();
+      navigateTo('portals');
+      showToast(`স্বাগতম! ${ROLE_META[role].title} হিসেবে সুরক্ষিত লগইন সম্পন্ন হয়েছে।`, 'success');
+    }
+
+    function logoutActiveRole() {
+      const prevHolder = ROLE_META[state.currentRole]?.holder || 'User';
+      addSecurityLog(prevHolder, 'পোর্টাল থেকে লগআউট করেছেন (Session Locked)।');
+      state.currentRole = 'public';
+      saveState();
+      updateHeaderAuthUI();
+      if (!document.getElementById('view-portals').classList.contains('hidden')) {
+        renderPortalsView();
+      }
+      showToast('আপনি নিরাপদে লগআউট করেছেন। সেশন লক করা হয়েছে।', 'success');
+    }
+
+    function handleUpdatePresidentPassword(e) {
+      e.preventDefault();
+      if (state.currentRole !== 'president') {
+        showToast('শুধুমাত্র সভাপতি Md Rasel Talukder নিজের পাসওয়ার্ড পরিবর্তন করতে পারবেন!', 'error');
+        return;
+      }
+      const newPass = document.getElementById('pres-new-password').value.trim();
+      if (newPass.length < 4) {
+        showToast('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।', 'error');
+        return;
+      }
+      state.rolePasswords.president = newPass;
+      saveState();
+      addSecurityLog('Md Rasel Talukder (সভাপতি)', 'সভাপতির ব্যক্তিগত লগইন পাসওয়ার্ড পরিবর্তন করেছেন।');
+      e.target.reset();
+      showToast('সভাপতির ব্যক্তিগত পাসওয়ার্ড সফলভাবে পরিবর্তিত ও সংরক্ষিত হয়েছে!', 'success');
+    }
+
+    function togglePresidentAbsence(isAbsent) {
+      if (state.currentRole !== 'president') {
+        showToast('শুধুমাত্র সভাপতি Md Rasel Talukder লগইন অবস্থায় দায়িত্ব হস্তান্তর চালু বা বন্ধ করতে পারবেন!', 'error');
+        updateHeaderAuthUI();
+        return;
+      }
+      state.presidentAbsent = isAbsent;
+      saveState();
+      updateHeaderAuthUI();
+      addSecurityLog('Md Rasel Talukder (সভাপতি)', isAbsent ? 'অনুপস্থিতিকালীন দায়িত্ব সাধারণ সম্পাদক Md Sayful Islam-কে প্রদান করেছেন।' : 'সভাপতি পুনরায় সরাসরি দায়িত্ব গ্রহণ করেছেন।');
+      showToast(isAbsent ? 'সাধারণ সম্পাদক Md Sayful Islam-কে ভারপ্রাপ্ত দায়িত্ব দেওয়া হয়েছে।' : 'সভাপতি সরাসরি দায়িত্ব পুনর্বহাল করেছেন।', 'success');
+      renderPortalsView();
+    }
+
+    function hasRoleAccess(requiredRoles) {
+      if (state.currentRole === 'president') return true; // President has universal supreme oversight
+      return requiredRoles.includes(state.currentRole);
+    }
+
+    function canFinalApprove() {
+      if (state.currentRole === 'president') return true;
+      if (state.currentRole === 'secretary' && state.presidentAbsent) return true;
+      return false;
+    }
+
+    function getApproverDisplayName() {
+      if (state.presidentAbsent && state.currentRole === 'secretary') {
+        return 'Md Sayful Islam (ভারপ্রাপ্ত সভাপতি)';
+      }
+      return 'Md Rasel Talukder (সভাপতি)';
+    }
+
+    function openSecurityLogModal() {
+      openModal(
+        '<i class="fa-solid fa-shield-halved text-amber-400"></i> সিস্টেম নিরাপত্তা ও অডিট লগ (Security Trail)',
+        `
+        <div class="space-y-3">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-xs text-emerald-900">
+            <strong>বর্তমান সক্রিয় সেশন:</strong> ${ROLE_META[state.currentRole]?.title}<br>
+            <strong>নিরাপত্তা অবস্থা:</strong> রোল-ভিত্তিক পাসওয়ার্ড সুরক্ষা ও রেকর্ড লক সক্রিয় রয়েছে।
+          </div>
+          <div class="space-y-2 max-h-72 overflow-y-auto">
+            ${state.securityLogs.map(log => `
+              <div class="p-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs">
+                <div class="flex justify-between font-bold text-emerald-900">
+                  <span><i class="fa-solid fa-user-shield mr-1"></i>${log.actor}</span>
+                  <span class="text-slate-500 font-normal">${log.time}</span>
+                </div>
+                <p class="text-slate-700 mt-1">${log.action}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        `
+      );
+    }
+
+    // =========================================================================
+    // UNIVERSAL RECEIPT / MONEY RECEIPT GENERATOR (রসিদ / রিসিট)
+    // =========================================================================
+    function openUniversalReceipt(receiptData) {
+      const {
+        receiptNo,
+        categoryTitle,
+        date,
+        partyLabel,
+        partyName,
+        department,
+        details,
+        amount,
+        statusText,
+        verifiedBy
+      } = receiptData;
+
+      openModal(
+        `<i class="fa-solid fa-receipt text-amber-400"></i> অফিসিয়াল ডিজিটাল রসিদ / রিসিট (${receiptNo})`,
+        `
+        <div id="printable-receipt-area" class="border-2 border-emerald-800 rounded-2xl p-5 bg-gradient-to-b from-emerald-50/50 to-white space-y-4">
+          <div class="text-center border-b-2 border-dashed border-emerald-300 pb-3">
+            <p class="font-arabic text-emerald-900 text-base font-bold">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+            <p class="text-xs font-bold text-emerald-800">বিসমিল্লাহির রহমানির রহিম</p>
+            <h4 class="font-serif font-bold text-xl text-emerald-950 mt-1">তালুকদার বাড়ি সমাজ কল্যাণ ফাউন্ডেশন</h4>
+            <p class="text-xs text-slate-600">Talukder Bari Social Welfare Foundation</p>
+            <div class="mt-2 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-900 text-amber-300 text-xs font-bold">
+              <span>${categoryTitle}</span> • <span>রসিদ নং: ${receiptNo}</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-500">তারিখ (Date):</span>
+              <strong class="text-slate-900">${date}</strong>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-500">${partyLabel}:</span>
+              <strong class="text-slate-900 text-right">${partyName}</strong>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 pb-1.5">
+              <span class="text-slate-500">সংশ্লিষ্ট বিভাগ:</span>
+              <span class="font-semibold text-emerald-900">${department}</span>
+            </div>
+            <div class="border-b border-slate-100 pb-1.5">
+              <span class="text-slate-500 block text-xs">বিবরণ / খাত:</span>
+              <p class="font-medium text-slate-800 mt-0.5">${details}</p>
+            </div>
+            ${amount !== null && amount !== undefined ? `
+              <div class="flex justify-between items-center bg-emerald-100/70 px-3.5 py-2.5 rounded-xl border border-emerald-300">
+                <span class="font-bold text-emerald-950">মোট টাকার পরিমাণ:</span>
+                <strong class="text-xl text-emerald-900">${formatCurrency(amount)}</strong>
+              </div>
+            ` : ''}
+            <div class="flex justify-between items-center pt-1">
+              <span class="text-slate-500">অনুমোদন ও নিরাপত্তা অবস্থা:</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-800 text-amber-300 text-xs font-bold">${statusText}</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-emerald-200 grid grid-cols-2 gap-4 text-center text-xs">
+            <div>
+              <p class="font-bold text-emerald-900">${verifiedBy}</p>
+              <p class="text-[11px] text-slate-500 border-t border-slate-300 mt-1 pt-1">বিভাগীয় সংরক্ষণ ও যাচাই</p>
+            </div>
+            <div>
+              <p class="font-bold text-emerald-900">Md Rasel Talukder</p>
+              <p class="text-[11px] text-slate-500 border-t border-slate-300 mt-1 pt-1">সভাপতি (চূড়ান্ত অনুমোদক)</p>
+            </div>
+          </div>
+        </div>
+        `,
+        `<button onclick="window.print()" class="px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-print"></i> রসিদ প্রিন্ট / সেভ করুন
+        </button>`
+      );
+    }
+
+    // =========================================================================
+    // PUBLIC DASHBOARD RENDERER
+    // =========================================================================
+    function renderDashboard() {
+      const totalMembers = state.members.filter(m => m.approved).length;
+      const totalChanda = state.chandaRecords.filter(c => c.status !== 'cancelled').reduce((sum, r) => sum + Number(r.amount), 0);
+      const totalDonIn = state.donations.filter(d => d.type === 'received' && d.status !== 'cancelled').reduce((sum, d) => sum + Number(d.amount), 0);
+      const totalDonOut = state.donations.filter(d => d.type === 'given' && d.status !== 'cancelled').reduce((sum, d) => sum + Number(d.amount), 0);
+      const totalExpenses = state.expenses.filter(e => e.status !== 'cancelled').reduce((sum, e) => sum + Number(e.amount), 0);
+      const netFund = (totalChanda + totalDonIn) - (totalDonOut + totalExpenses);
+
+      document.getElementById('stat-total-members').innerText = `${totalMembers} জন`;
+      document.getElementById('stat-total-chanda').innerText = formatCurrency(totalChanda);
+      document.getElementById('stat-donations-in').innerText = formatCurrency(totalDonIn);
+      document.getElementById('stat-net-fund').innerText = formatCurrency(netFund);
+
+      const keyRoles = ['advisor', 'president', 'admin', 'secretary', 'finance', 'education', 'audit'];
+      const leaders = state.members.filter(m => keyRoles.includes(m.roleKey));
+
+      document.getElementById('dashboard-leadership-grid').innerHTML = leaders.map(m => `
+        <div class="border border-slate-200 rounded-2xl p-4 flex items-center gap-3.5 bg-slate-50/60 hover:bg-emerald-50/50 transition">
+          ${getAvatarHTML(m, 'w-14 h-14 shrink-0')}
+          <div class="min-w-0">
+            <span class="inline-block text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 truncate max-w-full">
+              ${m.council}
+            </span>
+            <h4 class="font-bold text-sm text-slate-900 truncate mt-0.5">${m.name}</h4>
+            <p class="text-xs text-slate-600 line-clamp-1">${m.designation}</p>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('public-activities-list').innerHTML = state.eduActivities.filter(a => a.status !== 'cancelled').map(act => `
+        <div class="p-4 rounded-xl border border-slate-100 bg-slate-50/70 hover:border-emerald-200 transition">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <span class="px-2.5 py-0.5 rounded-md bg-emerald-700 text-white text-[11px] font-bold">${act.category}</span>
+            <span class="text-xs text-slate-500"><i class="fa-regular fa-calendar mr-1"></i>${act.date}</span>
+          </div>
+          <h4 class="font-bold text-emerald-950 text-base">${act.title}</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">${act.summary}</p>
+          <p class="text-[11px] text-emerald-700 font-semibold mt-2">প্রকাশনায়: ${act.author} (শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ)</p>
+        </div>
+      `).join('');
+
+      document.getElementById('public-notices-list').innerHTML = state.notices.map(n => `
+        <div class="p-3.5 rounded-xl border border-amber-200/80 bg-amber-50/40">
+          <div class="flex items-center justify-between text-[11px] text-amber-800 font-bold mb-1">
+            <span><i class="fa-solid fa-bell mr-1"></i>অফিসিয়াল নোটিশ</span>
+            <span>${n.date}</span>
+          </div>
+          <h5 class="font-bold text-sm text-slate-900">${n.title}</h5>
+          <p class="text-xs text-slate-600 mt-1 leading-relaxed">${n.body}</p>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // REGISTRATION & CHANDA VIEW
+    // =========================================================================
+    function renderRegisterView() {
+      const select = document.getElementById('chanda-member-select');
+      select.innerHTML = state.members.map(m => `
+        <option value="${m.id}">${m.name} (${m.id}) — ${m.designation}</option>
+      `).join('');
+
+      const recentList = document.getElementById('recent-chanda-list');
+      recentList.innerHTML = [...state.chandaRecords].reverse().map(c => `
+        <div class="p-3 rounded-xl border ${c.status === 'cancelled' ? 'border-rose-200 bg-rose-50/40 opacity-75' : 'border-slate-100 bg-slate-50'} flex items-center justify-between gap-2">
+          <div>
+            <p class="font-bold text-xs sm:text-sm text-slate-900">${c.memberName}</p>
+            <p class="text-[11px] text-slate-500">${c.month} • ${c.method} (${c.trx})</p>
+            <span class="inline-block mt-1 text-[10px] font-bold px-2 py-0.5 rounded ${c.status === 'approved' ? 'bg-emerald-100 text-emerald-800' : c.status === 'cancelled' ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'}">
+              ${c.status === 'approved' ? '✓ অনুমোদিত' : c.status === 'cancelled' ? '✕ বাতিল' : '⏳ অপেক্ষমাণ'}
+            </span>
+          </div>
+          <div class="text-right">
+            <span class="font-bold text-sm text-emerald-800 block">${formatCurrency(c.amount)}</span>
+            <button onclick="viewChandaReceipt('${c.id}')" class="mt-1 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-[11px] font-bold">
+              <i class="fa-solid fa-receipt"></i> রসিদ / রিসিট
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function previewRegistrationPhoto(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      compressImage(file, 320, (base64) => {
+        tempRegPhotoBase64 = base64;
+        const img = document.getElementById('reg-photo-preview');
+        const placeholder = document.getElementById('reg-photo-placeholder');
+        img.src = base64;
+        img.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+      });
+    }
+
+    function compressImage(file, maxWidth, callback) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          const canvas = document.createElement('canvas');
+          const scale = Math.min(1, maxWidth / img.width);
+          canvas.width = img.width * scale;
+          canvas.height = img.height * scale;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          callback(canvas.toDataURL('image/jpeg', 0.8));
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleMemberRegistration(e) {
+      e.preventDefault();
+      const council = document.getElementById('reg-council').value;
+      const designation = document.getElementById('reg-designation').value.trim();
+      const name = document.getElementById('reg-name').value.trim();
+      const guardian = document.getElementById('reg-guardian').value.trim();
+      const phone = document.getElementById('reg-phone').value.trim();
+      const blood = document.getElementById('reg-blood').value;
+      const profession = document.getElementById('reg-profession').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-password').value;
+      const division = document.getElementById('reg-division').value;
+      const district = document.getElementById('reg-district').value.trim();
+      const thana = document.getElementById('reg-thana').value.trim();
+      const streetAddress = document.getElementById('reg-address').value.trim();
+      const appType = document.getElementById('reg-app-type').value;
+      const description = document.getElementById('reg-description').value.trim();
+
+      const fullAddress = `${streetAddress}, থানা/উপজেলা: ${thana}, জেলা: ${district}, ${division}`;
+      const newId = 'TBSWF-' + Math.floor(1000 + Math.random() * 9000);
+
+      const newMember = {
+        id: newId,
+        name,
+        roleKey: council === 'উপদেষ্টা পরিষদ' ? 'advisor' : 'member',
+        council,
+        designation,
+        isHead: false,
+        guardian,
+        phone,
+        email,
+        blood,
+        profession,
+        division,
+        district,
+        thana,
+        address: fullAddress,
+        appType,
+        description,
+        password,
+        photo: tempRegPhotoBase64,
+        approved: true
+      };
+
+      state.members.push(newMember);
+      saveState();
+      addSecurityLog(name, `নতুন সদস্য হিসেবে অনলাইন নিবন্ধন সম্পন্ন করেছেন (${newId})।`);
+
+      e.target.reset();
+      tempRegPhotoBase64 = '';
+      document.getElementById('reg-photo-preview').classList.add('hidden');
+      document.getElementById('reg-photo-placeholder').classList.remove('hidden');
+
+      renderRegisterView();
+      showToast(`অভিনন্দন ${name}! আপনার নিবন্ধন সফল হয়েছে (আইডি: ${newId})।`, 'success');
+
+      openUniversalReceipt({
+        receiptNo: newId,
+        categoryTitle: 'সদস্য নিবন্ধন রসিদ / সনদ',
+        date: new Date().toISOString().slice(0, 10),
+        partyLabel: 'সদস্যের নাম ও পিতা/মাতা',
+        partyName: `${newMember.name} (পিতা/মাতা: ${newMember.guardian})`,
+        department: `${newMember.council} (${newMember.designation})`,
+        details: `ক্যাটাগরি: ${newMember.appType} | এলাকা: ${newMember.thana}, ${newMember.district}, ${newMember.division} | মোবাইল: ${newMember.phone}`,
+        amount: null,
+        statusText: 'নিবন্ধন সংরক্ষিত ও যাচাইকৃত',
+        verifiedBy: 'Md Ahsanul Haque Talukder (Admin)'
+      });
+    }
+
+    function handleChandaPayment(e) {
+      e.preventDefault();
+      const memberId = document.getElementById('chanda-member-select').value;
+      const member = state.members.find(m => m.id === memberId);
+      const month = document.getElementById('chanda-month').value;
+      const amount = Number(document.getElementById('chanda-amount').value);
+      const method = document.getElementById('chanda-method').value;
+      const trx = document.getElementById('chanda-trx').value.trim();
+
+      const receipt = {
+        id: 'CHD-' + Math.floor(1000 + Math.random() * 9000),
+        memberId: member.id,
+        memberName: member.name,
+        month,
+        amount,
+        method,
+        trx,
+        date: new Date().toISOString().slice(0, 10),
+        status: 'approved',
+        locked: false
+      };
+
+      state.chandaRecords.push(receipt);
+      saveState();
+      e.target.reset();
+      document.getElementById('chanda-amount').value = 500;
+      renderRegisterView();
+      showToast(`${member.name}-এর ${formatCurrency(amount)} চাঁদা সংরক্ষিত হয়েছে!`, 'success');
+      viewChandaReceipt(receipt.id);
+    }
+
+    function viewChandaReceipt(receiptId) {
+      const r = state.chandaRecords.find(item => item.id === receiptId);
+      if (!r) return;
+      openUniversalReceipt({
+        receiptNo: r.id,
+        categoryTitle: 'মাসিক চাঁদা জমার মানি রিসিট (Money Receipt)',
+        date: r.date,
+        partyLabel: 'সদস্যের নাম ও আইডি',
+        partyName: `${r.memberName} (${r.memberId})`,
+        department: 'অর্থ বিভাগ (Finance Department)',
+        details: `চাঁদার মাস: ${r.month} | মাধ্যম: ${r.method} | TrxID: ${r.trx}`,
+        amount: r.amount,
+        statusText: r.status === 'approved' ? 'অনুমোদিত ও সংরক্ষিত ✓' : r.status === 'cancelled' ? 'বাতিলকৃত ✕' : 'যাচাই অপেক্ষমাণ',
+        verifiedBy: 'Md Sakibul Talukder (অর্থ সম্পাদক)'
+      });
+    }
+
+    // =========================================================================
+    // COUNCILS & PHOTO UPLOAD VIEW
+    // =========================================================================
+    function filterCouncil(filterName) {
+      currentCouncilFilter = filterName;
+      document.querySelectorAll('.council-filter-btn').forEach(btn => {
+        btn.className = btn.dataset.filter === filterName
+          ? 'council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800 text-white'
+          : 'council-filter-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-emerald-50';
+      });
+      renderCouncilsView();
+    }
+
+    function triggerMemberPhotoUpload(memberId) {
+      const input = document.getElementById(`photo-upload-${memberId}`);
+      if (input) input.click();
+    }
+
+    function handleMemberPhotoChange(event, memberId) {
+      const file = event.target.files[0];
+      if (!file) return;
+      compressImage(file, 320, (base64) => {
+        const idx = state.members.findIndex(m => m.id === memberId);
+        if (idx !== -1) {
+          state.members[idx].photo = base64;
+          saveState();
+          renderCouncilsView();
+          renderDashboard();
+          showToast(`${state.members[idx].name}-এর প্রোফাইল ছবি সফলভাবে সংরক্ষিত হয়েছে!`, 'success');
+        }
+      });
+    }
+
+    function renderCouncilsView() {
+      const groups = [
+        {
+          key: 'উপদেষ্টা পরিষদ',
+          title: '১. উপদেষ্টা পরিষদ (Advisory Council)',
+          subtitle: 'প্রধান উপদেষ্টা: Md Humayun Kabir Talukder এবং সম্মানিত উপদেষ্টাবৃন্দ',
+          filterMatch: m => m.council === 'উপদেষ্টা পরিষদ'
+        },
+        {
+          key: 'কার্যনির্বাহী পরিষদ',
+          title: '২. কার্যনির্বাহী পরিষদ ও Admin Panel নেতৃত্ব',
+          subtitle: 'সভাপতি Md Rasel Talukder, সিনিয়র সহ-সভাপতি Md Ahsanul Haque Talukder ও সাধারণ সম্পাদক Md Sayful Islam',
+          filterMatch: m => m.council === 'কার্যনির্বাহী পরিষদ'
+        },
+        {
+          key: 'বিভাগীয় প্রধান',
+          title: '৩. বিভাগীয় সম্পাদক ও কর্মকর্তাবৃন্দ (Departments)',
+          subtitle: 'অর্থ বিভাগ, শিক্ষা-সংস্কৃতি ক্রীড়া ও প্রকাশনা বিভাগ, অডিট বিভাগ এবং বাজেট অনুমোদন বিভাগ',
+          filterMatch: m => ['অর্থ বিভাগ', 'শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ', 'অডিট বিভাগ', 'বাজেট অনুমোদন বিভাগ'].includes(m.council)
+        },
+        {
+          key: 'সাধারণ সদস্য',
+          title: '৪. নিবন্ধিত সাধারণ সদস্যবৃন্দ (General Members)',
+          subtitle: 'ফাউন্ডেশনের সকল নিবন্ধিত সাধারণ সদস্যের তালিকা',
+          filterMatch: m => m.council === 'সাধারণ সদস্য'
+        }
+      ];
+
+      const visibleGroups = currentCouncilFilter === 'ALL' ? groups : groups.filter(g => g.key === currentCouncilFilter);
+
+      document.getElementById('councils-roster-container').innerHTML = visibleGroups.map(group => {
+        const list = state.members.filter(group.filterMatch);
+        return `
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm">
+            <div class="border-b border-slate-100 pb-3 mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950">${group.title}</h3>
+                <p class="text-xs sm:text-sm text-slate-600">${group.subtitle}</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold self-start">মোট: ${list.length} জন</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${list.map(m => `
+                <div class="border ${m.isHead ? 'border-amber-300 bg-gradient-to-b from-amber-50/40 to-white' : 'border-slate-200 bg-white'} rounded-2xl p-4 shadow-xs card-hover flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start gap-3.5">
+                      <div class="relative group shrink-0">
+                        ${getAvatarHTML(m, 'w-16 h-16')}
+                        <button onclick="triggerMemberPhotoUpload('${m.id}')" title="ছবি পরিবর্তন/যোগ করুন" class="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-800 hover:bg-emerald-900 text-amber-300 border-2 border-white flex items-center justify-center text-xs shadow">
+                          <i class="fa-solid fa-camera"></i>
+                        </button>
+                        <input type="file" id="photo-upload-${m.id}" accept="image/*" onchange="handleMemberPhotoChange(event, '${m.id}')" class="hidden" />
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <span class="inline-block px-2 py-0.5 rounded-md ${m.isHead ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-800'} text-[10px] font-bold">
+                          ${m.council}
+                        </span>
+                        <h4 class="font-bold text-base text-slate-900 mt-1 leading-snug">${m.name}</h4>
+                        <p class="text-xs font-semibold text-emerald-800 mt-0.5">${m.designation}</p>
+                      </div>
+                    </div>
+
+                    <div class="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-600 space-y-1">
+                      <p><i class="fa-solid fa-id-badge w-4 text-emerald-700"></i> আইডি: <span class="font-mono font-semibold">${m.id}</span></p>
+                      <p><i class="fa-solid fa-phone w-4 text-emerald-700"></i> মোবাইল: ${m.phone}</p>
+                      <p><i class="fa-solid fa-droplet w-4 text-rose-600"></i> রক্তের গ্রুপ: <strong>${m.blood}</strong> • পেশা: ${m.profession}</p>
+                    </div>
+                  </div>
+
+                  <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                    <button onclick="triggerMemberPhotoUpload('${m.id}')" class="text-xs font-bold text-emerald-800 hover:text-emerald-950 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                      <i class="fa-solid fa-image"></i> ছবি যোগ/পরিবর্তন
+                    </button>
+                    <span class="text-[11px] text-emerald-600 font-semibold"><i class="fa-solid fa-circle-check"></i> যাচাইকৃত</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // DEPARTMENT PORTALS WITH EXPLICIT: লগইন, লগআউট, অনুমোদন, বাতিল, সংরক্ষণ, নিরাপত্তা, রসিদ
+    // =========================================================================
+    function selectPortalTab(tabName) {
+      state.activePortalTab = tabName;
+      saveState();
+      renderPortalsView();
+    }
+
+    function renderDepartmentControlBar(deptRoleKey, deptTitle, deptHeadName) {
+      const isAuthorized = hasRoleAccess(Array.isArray(deptRoleKey) ? deptRoleKey : [deptRoleKey]);
+      const primaryRole = Array.isArray(deptRoleKey) ? deptRoleKey[0] : deptRoleKey;
+
+      return `
+        <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5 border border-emerald-700 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${isAuthorized ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-emerald-950'}">
+                ${isAuthorized ? '✓ বিভাগীয় নিয়ন্ত্রণ সক্রিয় (Authenticated)' : '🔒 রিড-অনলি ভিউ (নিয়ন্ত্রণের জন্য লগইন করুন)'}
+              </span>
+              <span class="text-xs text-emerald-300 font-semibold">দায়িত্বপ্রাপ্ত: ${deptHeadName}</span>
+            </div>
+            <p class="text-xs text-slate-300 mt-1">
+              বিভাগীয় অপশনসমূহ: <strong>লগইন • লগআউট • অনুমোদন • বাতিল • সংরক্ষণ • নিরাপত্তা লক • রসিদ / রিসিট</strong>
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            ${!isAuthorized ? `
+              <button onclick="openRoleLoginModal('${primaryRole}')" class="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold text-xs flex items-center gap-1.5 shadow">
+                <i class="fa-solid fa-right-to-bracket"></i> ${deptTitle} লগইন
+              </button>
+            ` : `
+              <button onclick="saveDepartmentArchive('${deptTitle}')" class="px-3 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs flex items-center gap-1">
+                <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ (Save)
+              </button>
+              <button onclick="openSecurityLogModal()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-600 font-bold text-xs flex items-center gap-1">
+                <i class="fa-solid fa-shield-halved"></i> নিরাপত্তা
+              </button>
+              <button onclick="logoutActiveRole()" class="px-3 py-2 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold text-xs flex items-center gap-1">
+                <i class="fa-solid fa-right-from-bracket"></i> লগআউট
+              </button>
+            `}
+          </div>
+        </div>
+      `;
+    }
+
+    function saveDepartmentArchive(deptTitle) {
+      saveState();
+      addSecurityLog(ROLE_META[state.currentRole]?.holder || 'Officer', `${deptTitle}-এর সকল তথ্য সুরক্ষিত স্টোরেজে সংরক্ষণ (Backup/Save) করেছেন।`);
+      showToast(`${deptTitle}-এর সকল তথ্য সফলভাবে সংরক্ষিত ও এনক্রিপ্ট করা হয়েছে!`, 'success');
+    }
+
+    function renderRecordActionButtons(collectionName, itemId, item, allowedRoles, receiptPayloadFn) {
+      const canEdit = hasRoleAccess(allowedRoles);
+      const isLocked = !!item.locked;
+
+      return `
+        <div class="flex flex-wrap items-center gap-1.5 mt-2">
+          <!-- অনুমোদন (Approve) -->
+          <button onclick="mutateRecord('${collectionName}', '${itemId}', 'approve')" ${(!canEdit || isLocked) ? 'disabled' : ''}
+            class="px-2.5 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 transition ${(!canEdit || isLocked) ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-emerald-700 hover:bg-emerald-800 text-white'}">
+            <i class="fa-solid fa-check"></i> অনুমোদন
+          </button>
+
+          <!-- বাতিল (Cancel) -->
+          <button onclick="mutateRecord('${collectionName}', '${itemId}', 'cancel')" ${(!canEdit || isLocked) ? 'disabled' : ''}
+            class="px-2.5 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 transition ${(!canEdit || isLocked) ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-rose-600 hover:bg-rose-700 text-white'}">
+            <i class="fa-solid fa-ban"></i> বাতিল
+          </button>
+
+          <!-- সংরক্ষণ (Save) -->
+          <button onclick="mutateRecord('${collectionName}', '${itemId}', 'save')" ${!canEdit ? 'disabled' : ''}
+            class="px-2.5 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 transition ${!canEdit ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-teal-700 hover:bg-teal-800 text-white'}">
+            <i class="fa-solid fa-floppy-disk"></i> সংরক্ষণ
+          </button>
+
+          <!-- নিরাপত্তা (Security Lock/Unlock) -->
+          <button onclick="mutateRecord('${collectionName}', '${itemId}', 'toggleLock')" ${!canEdit ? 'disabled' : ''}
+            class="px-2.5 py-1 rounded-lg text-[11px] font-bold flex items-center gap-1 transition ${!canEdit ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : (isLocked ? 'bg-amber-500 text-emerald-950' : 'bg-slate-800 text-amber-300 hover:bg-slate-700')}">
+            <i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-shield-halved'}"></i> ${isLocked ? 'নিরাপত্তা লকড' : 'নিরাপত্তা'}
+          </button>
+
+          <!-- রসিদ / রিসিট (Receipt) -->
+          <button onclick="${receiptPayloadFn}"
+            class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 flex items-center gap-1 transition">
+            <i class="fa-solid fa-receipt"></i> রসিদ / রিসিট
+          </button>
+        </div>
+      `;
+    }
+
+    function mutateRecord(collectionName, itemId, action) {
+      const list = state[collectionName];
+      if (!list) return;
+      const item = list.find(x => x.id === itemId);
+      if (!item) return;
+
+      const actor = ROLE_META[state.currentRole]?.holder || 'Authorized User';
+
+      if (action === 'toggleLock') {
+        if (item.locked && state.currentRole !== 'president') {
+          showToast('নিরাপত্তা লক খুলতে শুধুমাত্র সভাপতি Md Rasel Talukder-এর অনুমোদন প্রয়োজন!', 'error');
+          return;
+        }
+        item.locked = !item.locked;
+        saveState();
+        addSecurityLog(actor, `রেকর্ড (${itemId})-এর নিরাপত্তা লক ${item.locked ? 'সক্রিয়' : 'আনলক'} করেছেন।`);
+        showToast(item.locked ? `রেকর্ড (${itemId}) নিরাপত্তা লক করা হয়েছে।` : `রেকর্ড (${itemId}) আনলক করা হয়েছে।`, 'success');
+      } else if (action === 'approve') {
+        item.status = 'approved';
+        if ('finalApproved' in item) {
+          if (!canFinalApprove()) {
+            item.deptApproved = true;
+            showToast(`বিভাগীয় অনুমোদন সম্পন্ন! চূড়ান্ত অনুমোদনের জন্য সভাপতির লগইন প্রয়োজন।`, 'warning');
+          } else {
+            item.deptApproved = true;
+            item.finalApproved = true;
+            item.cancelled = false;
+            item.approvedBy = getApproverDisplayName();
+            showToast(`রেকর্ড (${itemId}) চূড়ান্তভাবে অনুমোদিত হয়েছে!`, 'success');
+          }
+        } else {
+          showToast(`রেকর্ড (${itemId}) অনুমোদিত হয়েছে!`, 'success');
+        }
+        saveState();
+        addSecurityLog(actor, `রেকর্ড (${itemId}) অনুমোদন করেছেন।`);
+      } else if (action === 'cancel') {
+        item.status = 'cancelled';
+        if ('cancelled' in item) {
+          item.cancelled = true;
+          item.finalApproved = false;
+        }
+        saveState();
+        addSecurityLog(actor, `রেকর্ড (${itemId}) বাতিল করেছেন।`);
+        showToast(`রেকর্ড (${itemId}) বাতিল করা হয়েছে।`, 'warning');
+      } else if (action === 'save') {
+        saveState();
+        addSecurityLog(actor, `রেকর্ড (${itemId}) স্থায়ীভাবে সংরক্ষণ করেছেন।`);
+        showToast(`রেকর্ড (${itemId}) সুরক্ষিতভাবে সংরক্ষিত হয়েছে!`, 'success');
+      }
+
+      if (!document.getElementById('view-portals').classList.contains('hidden')) renderPortalsView();
+      if (!document.getElementById('view-donations').classList.contains('hidden')) renderDonationsView();
+      renderDashboard();
+    }
+
+    function openItemReceipt(collectionName, itemId) {
+      const item = (state[collectionName] || []).find(x => x.id === itemId);
+      if (!item) return;
+
+      if (collectionName === 'chandaRecords') {
+        viewChandaReceipt(itemId);
+        return;
+      }
+
+      openUniversalReceipt({
+        receiptNo: item.id,
+        categoryTitle: 'বিভাগীয় অনুমোদন ও সংরক্ষণ রসিদ / রিসিট',
+        date: item.date || new Date().toISOString().slice(0, 10),
+        partyLabel: 'সংশ্লিষ্ট ব্যক্তি / খাত',
+        partyName: item.party || item.requestedBy || item.author || item.auditor || item.advisor || item.recordedBy || 'তালুকদার বাড়ি ফাউন্ডেশন',
+        department: item.department || item.category || 'ফাউন্ডেশন বিভাগীয় রেকর্ড',
+        details: item.title || item.finding || item.message || item.purpose || '',
+        amount: item.amount !== undefined ? item.amount : null,
+        statusText: (item.status === 'cancelled' || item.cancelled) ? 'বাতিলকৃত ✕' : (item.finalApproved || item.status === 'approved') ? 'অনুমোদিত ও সংরক্ষিত ✓' : 'বিভাগীয় প্রক্রিয়াধীন',
+        verifiedBy: item.approvedBy || item.recordedBy || item.author || item.auditor || 'বিভাগীয় প্রধান'
+      });
+    }
+
+    function renderPortalsView() {
+      const tab = state.activePortalTab || 'president';
+      document.querySelectorAll('.ptab-btn').forEach(btn => {
+        btn.className = btn.id === `ptab-${tab}`
+          ? 'ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-400 text-emerald-950 shadow'
+          : 'ptab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-800/80 text-white hover:bg-emerald-700';
+      });
+
+      const container = document.getElementById('portal-content-area');
+
+      // 1. PRESIDENT PORTAL (Md Rasel Talukder)
+      if (tab === 'president') {
+        const isPres = state.currentRole === 'president';
+        const hasAuthority = canFinalApprove();
+        container.innerHTML = `
+          ${renderDepartmentControlBar(['president', 'secretary'], 'সভাপতি ও নির্বাহী পোর্টাল', 'সভাপতি Md Rasel Talukder (সহকারী: সাধারণ সম্পাদক Md Sayful Islam)')}
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left: President Password & Supreme Control Card -->
+            <div class="bg-white rounded-2xl p-6 border-2 border-amber-400 shadow-sm space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl">
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif font-bold text-lg text-emerald-950">সভাপতির একক নিরাপত্তা নিয়ন্ত্রণ</h4>
+                  <p class="text-xs text-slate-500">Md Rasel Talukder (President)</p>
+                </div>
+              </div>
+
+              ${!isPres ? `
+                <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 space-y-3">
+                  <p class="text-xs text-amber-950 font-semibold">
+                    অন্য কেউ যাতে ফাউন্ডেশনের চূড়ান্ত নিয়ন্ত্রণ করতে না পারে, সেজন্য সভাপতির নিজস্ব পাসওয়ার্ড দিয়ে লগইন আবশ্যক।
+                  </p>
+                  <button onclick="openRoleLoginModal('president')" class="w-full py-2.5 rounded-xl bg-emerald-900 hover:bg-emerald-800 text-amber-300 font-bold text-xs shadow">
+                    <i class="fa-solid fa-key mr-1"></i> সভাপতি পাসওয়ার্ড দিয়ে লগইন করুন
+                  </button>
+                </div>
+              ` : `
+                <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-semibold">
+                  ✓ আপনি সভাপতি <strong>Md Rasel Talukder</strong> হিসেবে লগইন আছেন। সম্পূর্ণ সিস্টেম আপনার একক নিয়ন্ত্রণে।
+                </div>
+                <form onsubmit="handleUpdatePresidentPassword(event)" class="space-y-2.5 pt-2 border-t border-slate-100">
+                  <label class="block text-xs font-bold text-slate-700">সভাপতির নিজস্ব পাসওয়ার্ড পরিবর্তন করুন:</label>
+                  <input type="password" id="pres-new-password" required placeholder="নতুন গোপন পাসওয়ার্ড লিখুন" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" />
+                  <button type="submit" class="w-full py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-emerald-950 font-bold text-xs">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> নতুন পাসওয়ার্ড সংরক্ষণ করুন
+                  </button>
+                </form>
+              `}
+
+              <!-- Publish Central Notice -->
+              <form onsubmit="handlePublishNotice(event)" class="space-y-2.5 pt-3 border-t border-slate-100">
+                <label class="block text-xs font-bold text-slate-700">কেন্দ্রীয় নোটিশ প্রকাশ (সভাপতি/সচিব):</label>
+                <input type="text" id="notice-title" required placeholder="নোটিশের শিরোনাম" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm" />
+                <textarea id="notice-body" rows="2" required placeholder="নোটিশের বিবরণ..." class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm"></textarea>
+                <button type="submit" class="w-full py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs">
+                  <i class="fa-solid fa-bullhorn mr-1"></i> নোটিশ প্রকাশ ও সংরক্ষণ
+                </button>
+              </form>
+            </div>
+
+            <!-- Right 2 Cols: Final Approvals & Master Control -->
+            <div class="lg:col-span-2 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                <h3 class="font-serif text-xl font-bold text-emerald-950">চূড়ান্ত অনুমোদন, বাতিল, নিরাপত্তা ও রসিদ তালিকা</h3>
+                <span class="px-3 py-1 rounded-full text-xs font-bold ${hasAuthority ? 'bg-emerald-100 text-emerald-900' : 'bg-rose-100 text-rose-800'}">
+                  ${hasAuthority ? `অনুমোদনকারী: ${getApproverDisplayName()}` : 'অনুমোদন ক্ষমতা লকড (সভাপতি লগইন প্রয়োজন)'}
+                </span>
+              </div>
+
+              <div class="space-y-3">
+                ${state.budgetRequests.map(b => `
+                  <div class="p-4 rounded-xl border ${b.cancelled ? 'border-rose-200 bg-rose-50/40' : b.finalApproved ? 'border-emerald-200 bg-emerald-50/40' : 'border-amber-200 bg-amber-50/30'}">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-slate-800 text-white">${b.id}</span>
+                        <span class="text-xs font-bold text-emerald-800 ml-1">${b.department}</span>
+                      </div>
+                      <span class="text-xs font-bold px-2.5 py-0.5 rounded-full ${b.cancelled ? 'bg-rose-100 text-rose-800' : b.finalApproved ? 'bg-emerald-700 text-white' : 'bg-amber-100 text-amber-900'}">
+                        ${b.cancelled ? '✕ বাতিলকৃত' : b.finalApproved ? `✓ ফাইনাল অনুমোদিত (${b.approvedBy})` : '⏳ চূড়ান্ত অনুমোদনের অপেক্ষায়'}
+                      </span>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-900 mt-1.5">${b.title} — <span class="text-emerald-800">${formatCurrency(b.amount)}</span></h4>
+                    <p class="text-xs text-slate-600 mt-0.5">${b.description}</p>
+                    ${renderRecordActionButtons('budgetRequests', b.id, b, ['president', 'secretary'], `openItemReceipt('budgetRequests','${b.id}')`)}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 2. ADMIN PANEL
+      if (tab === 'admin') {
+        const canEdit = hasRoleAccess(['admin']);
+        container.innerHTML = `
+          ${renderDepartmentControlBar('admin', 'Admin Panel', 'সিনিয়র সহ-সভাপতি Md Ahsanul Haque Talukder')}
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3">
+              <h3 class="font-serif text-xl font-bold text-emerald-950">কেন্দ্রীয় সদস্য ও প্রোফাইল নিয়ন্ত্রণ (Admin Panel)</h3>
+              <button onclick="openUniversalReceipt({receiptNo:'ADM-RPT-01', categoryTitle:'প্রশাসনিক সদস্য তালিকা রসিদ', date:new Date().toISOString().slice(0,10), partyLabel:'Admin প্রধান', partyName:'Md Ahsanul Haque Talukder', department:'Admin Panel', details:'মোট নিবন্ধিত সদস্য: '+state.members.length+' জন', amount:null, statusText:'সুরক্ষিত ও যাচাইকৃত ✓', verifiedBy:'Md Ahsanul Haque Talukder'})" class="px-3.5 py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 text-xs font-bold">
+                <i class="fa-solid fa-receipt mr-1"></i> প্রশাসনিক রসিদ / রিসিট
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-slate-50 border-b text-xs text-slate-600 uppercase">
+                    <th class="p-3">ছবি ও নাম</th>
+                    <th class="p-3">আইডি ও মোবাইল</th>
+                    <th class="p-3">পরিষদ / বিভাগ</th>
+                    <th class="p-3 text-right">অ্যাকশন ও ছবি</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  ${state.members.map(m => `
+                    <tr>
+                      <td class="p-3 flex items-center gap-3">
+                        ${getAvatarHTML(m, 'w-10 h-10 shrink-0')}
+                        <div>
+                          <span class="font-bold text-slate-900 block">${m.name}</span>
+                          <span class="text-xs text-slate-500">${m.designation}</span>
+                        </div>
+                      </td>
+                      <td class="p-3 text-xs">${m.id}<br><span class="text-slate-500">${m.phone}</span></td>
+                      <td class="p-3 text-xs font-semibold text-emerald-800">${m.council}</td>
+                      <td class="p-3 text-right space-x-1">
+                        <button onclick="triggerMemberPhotoUpload('${m.id}')" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs">
+                          <i class="fa-solid fa-camera"></i> ছবি
+                        </button>
+                        <button onclick="openUniversalReceipt({receiptNo: '${m.id}', categoryTitle: 'সদস্য পরিচয়পত্র ও নিবন্ধন রসিদ', date: '২০২৬', partyLabel: 'সদস্যের নাম', partyName: '${m.name}', department: '${m.council}', details: 'পদবি: ${m.designation} | মোবাইল: ${m.phone}', amount: null, statusText: 'সক্রিয় সদস্য ✓', verifiedBy: 'Md Ahsanul Haque Talukder'})" class="px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-950 font-bold text-xs">
+                          <i class="fa-solid fa-receipt"></i> রসিদ
+                        </button>
+                        <input type="file" id="photo-upload-${m.id}" accept="image/*" onchange="handleMemberPhotoChange(event, '${m.id}')" class="hidden" />
+                      </td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 3. ADVISORY COUNCIL PORTAL
+      if (tab === 'advisor') {
+        const canEdit = hasRoleAccess(['advisor']);
+        const advisors = state.members.filter(m => m.council === 'উপদেষ্টা পরিষদ');
+        container.innerHTML = `
+          ${renderDepartmentControlBar('advisor', 'উপদেষ্টা পরিষদ', 'প্রধান উপদেষ্টা Md Humayun Kabir Talukder')}
+          <div class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${advisors.map(a => `
+                <div class="p-4 rounded-2xl border border-amber-200 bg-amber-50/30 flex items-center gap-3.5">
+                  ${getAvatarHTML(a, 'w-16 h-16 shrink-0')}
+                  <div>
+                    <h4 class="font-bold text-slate-900">${a.name}</h4>
+                    <p class="text-xs text-emerald-800 font-semibold">${a.designation}</p>
+                    <button onclick="triggerMemberPhotoUpload('${a.id}')" class="mt-2 text-xs font-bold text-amber-800 hover:underline flex items-center gap-1">
+                      <i class="fa-solid fa-camera"></i> ছবি যোগ/পরিবর্তন
+                    </button>
+                    <input type="file" id="photo-upload-${a.id}" accept="image/*" onchange="handleMemberPhotoChange(event, '${a.id}')" class="hidden" />
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <form onsubmit="handleAddAdvisorNote(event)" class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-4 border-t">
+              <input type="text" id="adv-note-title" required placeholder="পরামর্শের বিষয়" class="rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm" />
+              <input type="text" id="adv-note-msg" required placeholder="বিস্তারিত দিকনির্দেশনা লিখুন..." class="md:col-span-2 rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm" />
+              <button type="submit" ${!canEdit ? 'disabled' : ''} class="py-2.5 px-4 rounded-xl ${canEdit ? 'bg-emerald-800 hover:bg-emerald-900 text-white' : 'bg-slate-200 text-slate-400 cursor-not-allowed'} font-bold text-sm">
+                <i class="fa-solid fa-floppy-disk mr-1"></i> সংরক্ষণ করুন
+              </button>
+            </form>
+
+            <div class="space-y-3">
+              ${state.advisorNotes.map(n => `
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                  <div class="flex justify-between text-xs font-bold text-emerald-800">
+                    <span>${n.advisor} (${n.id})</span><span>${n.date}</span>
+                  </div>
+                  <h5 class="font-bold text-sm text-slate-900 mt-1">${n.title}</h5>
+                  <p class="text-xs text-slate-600 mt-0.5">${n.message}</p>
+                  ${renderRecordActionButtons('advisorNotes', n.id, n, ['advisor'], `openItemReceipt('advisorNotes','${n.id}')`)}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 4. FINANCE DEPARTMENT PORTAL
+      if (tab === 'finance') {
+        const canEdit = hasRoleAccess(['finance']);
+        const totalChanda = state.chandaRecords.filter(c => c.status !== 'cancelled').reduce((s, r) => s + Number(r.amount), 0);
+        const totalDonIn = state.donations.filter(d => d.type === 'received' && d.status !== 'cancelled').reduce((s, d) => s + Number(d.amount), 0);
+        const totalDonOut = state.donations.filter(d => d.type === 'given' && d.status !== 'cancelled').reduce((s, d) => s + Number(d.amount), 0);
+        const totalExp = state.expenses.filter(e => e.status !== 'cancelled').reduce((s, e) => s + Number(e.amount), 0);
+
+        container.innerHTML = `
+          ${renderDepartmentControlBar('finance', 'অর্থ বিভাগ', 'অর্থ সম্পাদক Md Sakibul Talukder ও সহকারী Md Jahidul Islam')}
+          <div class="bg-white rounded-2xl p-6 border border-emerald-200 shadow-sm space-y-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+                <p class="text-xs text-slate-600">মোট আয় (চাঁদা + অনুদান)</p>
+                <p class="text-lg font-bold text-emerald-900 mt-1">${formatCurrency(totalChanda + totalDonIn)}</p>
+              </div>
+              <div class="p-4 rounded-xl bg-rose-50 border border-rose-200">
+                <p class="text-xs text-slate-600">মোট ব্যয় (খরচ + অনুদান প্রদান)</p>
+                <p class="text-lg font-bold text-rose-800 mt-1">${formatCurrency(totalExp + totalDonOut)}</p>
+              </div>
+              <div class="p-4 rounded-xl bg-amber-50 border border-amber-200">
+                <p class="text-xs text-slate-600">সদস্য চাঁদা আদায়</p>
+                <p class="text-lg font-bold text-amber-900 mt-1">${formatCurrency(totalChanda)}</p>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900 text-white">
+                <p class="text-xs text-slate-300">নিট তহবিল স্থিতি</p>
+                <p class="text-lg font-bold text-amber-300 mt-1">${formatCurrency((totalChanda + totalDonIn) - (totalExp + totalDonOut))}</p>
+              </div>
+            </div>
+
+            <!-- Add Expense -->
+            <form onsubmit="handleAddExpense(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border">
+              <input type="text" id="exp-title" required placeholder="খরচের খাত / বিবরণ" class="sm:col-span-2 rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white" />
+              <input type="number" id="exp-amount" required min="10" placeholder="টাকার পরিমাণ" class="rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white font-bold" />
+              <button type="submit" ${!canEdit ? 'disabled' : ''} class="py-2 px-4 rounded-xl ${canEdit ? 'bg-emerald-800 text-white' : 'bg-slate-200 text-slate-400 cursor-not-allowed'} font-bold text-sm">
+                <i class="fa-solid fa-floppy-disk mr-1"></i> খরচ সংরক্ষণ
+              </button>
+            </form>
+
+            <!-- Subscriptions with Full Controls & Receipts -->
+            <div>
+              <h4 class="font-bold text-base text-emerald-950 mb-2">সদস্যদের চাঁদা আদায় তালিকা (অনুমোদন, বাতিল, সংরক্ষণ, নিরাপত্তা ও রসিদ)</h4>
+              <div class="space-y-2.5">
+                ${state.chandaRecords.map(c => `
+                  <div class="p-3.5 rounded-xl border ${c.status === 'cancelled' ? 'border-rose-200 bg-rose-50/40' : 'border-slate-200 bg-slate-50/50'} flex flex-col md:flex-row md:items-center justify-between gap-2">
+                    <div>
+                      <span class="font-mono text-xs font-bold text-emerald-900">${c.id}</span> • <strong>${c.memberName}</strong> (${c.month})
+                      <p class="text-xs text-slate-600">পরিমাণ: <strong>${formatCurrency(c.amount)}</strong> | মাধ্যম: ${c.method} (${c.trx}) | অবস্থা: <strong>${c.status === 'approved' ? 'অনুমোদিত' : c.status === 'cancelled' ? 'বাতিল' : 'অপেক্ষমাণ'}</strong></p>
+                    </div>
+                    ${renderRecordActionButtons('chandaRecords', c.id, c, ['finance'], `viewChandaReceipt('${c.id}')`)}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Expenses with Full Controls & Receipts -->
+            <div>
+              <h4 class="font-bold text-base text-emerald-950 mb-2">ব্যয় ও খরচের হিসাব বিবরণী</h4>
+              <div class="space-y-2.5">
+                ${state.expenses.map(ex => `
+                  <div class="p-3.5 rounded-xl border ${ex.status === 'cancelled' ? 'border-rose-200 bg-rose-50/40' : 'border-slate-200 bg-white'} flex flex-col md:flex-row md:items-center justify-between gap-2">
+                    <div>
+                      <span class="font-mono text-xs font-bold text-rose-800">${ex.id}</span> • <strong>${ex.title}</strong>
+                      <p class="text-xs text-slate-600">খরচ: <strong class="text-rose-700">${formatCurrency(ex.amount)}</strong> | তারিখ: ${ex.date} | এন্ট্রি: ${ex.recordedBy}</p>
+                    </div>
+                    ${renderRecordActionButtons('expenses', ex.id, ex, ['finance'], `openItemReceipt('expenses','${ex.id}')`)}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 5. EDUCATION, CULTURE, SPORTS & PUBLICATION PORTAL
+      if (tab === 'education') {
+        const canEdit = hasRoleAccess(['education']);
+        container.innerHTML = `
+          ${renderDepartmentControlBar('education', 'শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ', 'সম্পাদক Md Rayhan Talukder')}
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+            <form onsubmit="handleAddEduActivity(event)" class="grid grid-cols-1 md:grid-cols-4 gap-3 bg-emerald-50/60 p-4 rounded-xl border border-emerald-200">
+              <select id="edu-cat" class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
+                <option value="শিক্ষা ও বৃত্তি">শিক্ষা ও বৃত্তি</option>
+                <option value="সংস্কৃতি ও ইসলামিক অনুষ্ঠান">সংস্কৃতি ও ইসলামিক অনুষ্ঠান</option>
+                <option value="ক্রীড়া প্রতিযোগিতা">ক্রীড়া প্রতিযোগিতা</option>
+                <option value="প্রকাশনা ও ম্যাগাজিন">প্রকাশনা ও ম্যাগাজিন</option>
+              </select>
+              <input type="text" id="edu-title" required placeholder="অনুষ্ঠান বা প্রকাশনার শিরোনাম" class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" />
+              <input type="text" id="edu-summary" required placeholder="সংক্ষিপ্ত বিবরণ..." class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" />
+              <button type="submit" ${!canEdit ? 'disabled' : ''} class="py-2.5 px-4 rounded-xl ${canEdit ? 'bg-emerald-800 hover:bg-emerald-900 text-white' : 'bg-slate-200 text-slate-400 cursor-not-allowed'} font-bold text-sm">
+                <i class="fa-solid fa-floppy-disk mr-1"></i> সংরক্ষণ ও প্রকাশ
+              </button>
+            </form>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${state.eduActivities.map(a => `
+                <div class="p-4 rounded-2xl border ${a.status === 'cancelled' ? 'border-rose-200 bg-rose-50/40' : 'border-emerald-100 bg-emerald-50/30'} flex flex-col justify-between">
+                  <div>
+                    <div class="flex justify-between items-center">
+                      <span class="px-2.5 py-0.5 rounded-md bg-emerald-800 text-amber-300 text-[11px] font-bold">${a.category} (${a.id})</span>
+                      <span class="text-xs text-slate-500">${a.date}</span>
+                    </div>
+                    <h5 class="font-bold text-base text-slate-900 mt-2">${a.title}</h5>
+                    <p class="text-xs text-slate-600 mt-1">${a.summary}</p>
+                  </div>
+                  <div class="mt-3 pt-2 border-t border-emerald-100">
+                    ${renderRecordActionButtons('eduActivities', a.id, a, ['education'], `openItemReceipt('eduActivities','${a.id}')`)}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 6. AUDIT DEPARTMENT PORTAL
+      if (tab === 'audit') {
+        const canEdit = hasRoleAccess(['audit']);
+        container.innerHTML = `
+          ${renderDepartmentControlBar('audit', 'অডিট বিভাগ', 'অডিট বিষয়ক সম্পাদক Md Riyad Talukder')}
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+            <form onsubmit="handleAddAuditLog(event)" class="grid grid-cols-1 md:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border">
+              <input type="text" id="aud-period" required placeholder="নিরীক্ষার সময়কাল (যেমন: নভেম্বর ২০২৬)" class="rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white" />
+              <input type="text" id="aud-vouchers" required placeholder="পরীক্ষিত ভাউচার/রসিদ নম্বর" class="rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white" />
+              <input type="text" id="aud-finding" required placeholder="অডিট পর্যবেক্ষণ ও মন্তব্য..." class="rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white" />
+              <button type="submit" ${!canEdit ? 'disabled' : ''} class="py-2 px-4 rounded-xl ${canEdit ? 'bg-slate-900 text-amber-300' : 'bg-slate-200 text-slate-400 cursor-not-allowed'} font-bold text-sm">
+                <i class="fa-solid fa-file-circle-check mr-1"></i> অডিট রিপোর্ট সংরক্ষণ
+              </button>
+            </form>
+
+            <div class="space-y-3">
+              ${state.auditLogs.map(log => `
+                <div class="p-4 rounded-xl border border-slate-200 bg-white">
+                  <div class="flex justify-between items-center">
+                    <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-slate-100">${log.id} • ${log.period}</span>
+                    <span class="text-xs font-bold ${log.status === 'cancelled' ? 'text-rose-700' : 'text-emerald-700'}">${log.status === 'cancelled' ? '✕ বাতিল' : '✓ নিরীক্ষিত'}</span>
+                  </div>
+                  <p class="text-xs text-slate-500 mt-1">পরীক্ষিত নথি: ${log.voucherChecked}</p>
+                  <p class="text-sm text-slate-800 mt-1">${log.finding}</p>
+                  ${renderRecordActionButtons('auditLogs', log.id, log, ['audit'], `openItemReceipt('auditLogs','${log.id}')`)}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 7. BUDGET APPROVAL DEPARTMENT
+      if (tab === 'budget') {
+        const canEdit = hasRoleAccess(['budget', 'finance', 'education', 'audit', 'secretary']);
+        container.innerHTML = `
+          ${renderDepartmentControlBar(['budget', 'president'], 'বাজেট অনুমোদন বিভাগ', 'বিভাগীয় সুপারিশ ও সভাপতি Md Rasel Talukder (চূড়ান্ত অনুমোদক)')}
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+            <form onsubmit="handleSubmitBudget(event)" class="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-4 grid grid-cols-1 md:grid-cols-5 gap-3">
+              <select id="bdg-dept" class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white">
+                <option value="অর্থ বিভাগ">অর্থ বিভাগ</option>
+                <option value="শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগ">শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা</option>
+                <option value="অডিট বিভাগ">অডিট বিভাগ</option>
+                <option value="কার্যনির্বাহী পরিষদ">কার্যনির্বাহী পরিষদ</option>
+              </select>
+              <input type="text" id="bdg-title" required placeholder="বাজেট / বিলের শিরোনাম" class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" />
+              <input type="number" id="bdg-amount" required min="100" placeholder="বাজেট (টাকা)" class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white font-bold" />
+              <input type="text" id="bdg-desc" required placeholder="বিস্তারিত কারণ ও খাত..." class="rounded-xl border border-slate-300 px-3 py-2.5 text-sm bg-white" />
+              <button type="submit" class="py-2.5 px-4 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-sm">
+                <i class="fa-solid fa-paper-plane mr-1"></i> বাজেট আবেদন
+              </button>
+            </form>
+
+            <div class="space-y-3">
+              ${state.budgetRequests.map(b => `
+                <div class="p-4 rounded-2xl border ${b.cancelled ? 'border-rose-200 bg-rose-50/40' : 'border-slate-200 bg-white'}">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-slate-100">${b.id}</span>
+                      <span class="text-xs font-bold text-emerald-800 ml-1">${b.department}</span>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-0.5 rounded-full ${b.cancelled ? 'bg-rose-100 text-rose-800' : b.finalApproved ? 'bg-emerald-700 text-white' : 'bg-amber-100 text-amber-900'}">
+                      ${b.cancelled ? '✕ বাতিল' : b.finalApproved ? `✓ বিল পাস ও অনুমোদিত (${b.approvedBy})` : '⏳ অনুমোদনের অপেক্ষায়'}
+                    </span>
+                  </div>
+                  <h4 class="font-bold text-base text-slate-900 mt-1">${b.title} — <span class="text-emerald-800">${formatCurrency(b.amount)}</span></h4>
+                  <p class="text-xs text-slate-600">${b.description}</p>
+                  ${renderRecordActionButtons('budgetRequests', b.id, b, ['budget', 'president', 'secretary'], `openItemReceipt('budgetRequests','${b.id}')`)}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // =========================================================================
+    // FORM SUBMISSION HANDLERS
+    // =========================================================================
+    function handleSubmitBudget(e) {
+      e.preventDefault();
+      const dept = document.getElementById('bdg-dept').value;
+      const title = document.getElementById('bdg-title').value.trim();
+      const amount = Number(document.getElementById('bdg-amount').value);
+      const desc = document.getElementById('bdg-desc').value.trim();
+
+      state.budgetRequests.unshift({
+        id: 'BDG-' + Math.floor(500 + Math.random() * 499),
+        department: dept,
+        requestedBy: ROLE_META[state.currentRole]?.holder || 'Member',
+        title,
+        amount,
+        description: desc,
+        date: new Date().toISOString().slice(0, 10),
+        deptApproved: false,
+        finalApproved: false,
+        cancelled: false,
+        locked: false,
+        approvedBy: ''
+      });
+      saveState();
+      e.target.reset();
+      renderPortalsView();
+      showToast('বাজেট আবেদন সংরক্ষিত হয়েছে। সভাপতির অনুমোদনের পর বিল পাস হবে।', 'success');
+    }
+
+    function handlePublishNotice(e) {
+      e.preventDefault();
+      if (!hasRoleAccess(['president', 'secretary'])) {
+        showToast('শুধুমাত্র সভাপতি বা সাধারণ সম্পাদক লগইন অবস্থায় কেন্দ্রীয় নোটিশ প্রকাশ করতে পারবেন!', 'error');
+        return;
+      }
+      const title = document.getElementById('notice-title').value.trim();
+      const body = document.getElementById('notice-body').value.trim();
+      state.notices.unshift({
+        id: 'NTC-' + Math.floor(10 + Math.random() * 89),
+        title,
+        body,
+        date: new Date().toISOString().slice(0, 10)
+      });
+      saveState();
+      e.target.reset();
+      showToast('নতুন কেন্দ্রীয় নোটিশ পাবলিক ড্যাশবোর্ডে প্রকাশিত ও সংরক্ষিত হয়েছে!', 'success');
+    }
+
+    function handleAddAdvisorNote(e) {
+      e.preventDefault();
+      const title = document.getElementById('adv-note-title').value.trim();
+      const message = document.getElementById('adv-note-msg').value.trim();
+      state.advisorNotes.unshift({
+        id: 'ADV-' + Math.floor(900 + Math.random() * 99),
+        advisor: 'Md Humayun Kabir Talukder (প্রধান উপদেষ্টা)',
+        title,
+        message,
+        date: new Date().toISOString().slice(0, 10),
+        status: 'approved',
+        locked: false
+      });
+      saveState();
+      renderPortalsView();
+      showToast('উপদেষ্টা পরিষদের দিকনির্দেশনা সংরক্ষিত হয়েছে।', 'success');
+    }
+
+    function handleAddExpense(e) {
+      e.preventDefault();
+      const title = document.getElementById('exp-title').value.trim();
+      const amount = Number(document.getElementById('exp-amount').value);
+      state.expenses.unshift({
+        id: 'EXP-' + Math.floor(200 + Math.random() * 700),
+        title,
+        amount,
+        date: new Date().toISOString().slice(0, 10),
+        recordedBy: 'Md Sakibul Talukder',
+        status: 'pending',
+        locked: false
+      });
+      saveState();
+      renderPortalsView();
+      showToast('ব্যয়ের হিসাব অর্থ বিভাগের লেজারে সংরক্ষিত হয়েছে।', 'success');
+    }
+
+    function handleAddEduActivity(e) {
+      e.preventDefault();
+      const category = document.getElementById('edu-cat').value;
+      const title = document.getElementById('edu-title').value.trim();
+      const summary = document.getElementById('edu-summary').value.trim();
+      state.eduActivities.unshift({
+        id: 'EDU-' + Math.floor(300 + Math.random() * 600),
+        category,
+        title,
+        summary,
+        date: new Date().toISOString().slice(0, 10),
+        author: 'Md Rayhan Talukder',
+        status: 'approved',
+        locked: false
+      });
+      saveState();
+      renderPortalsView();
+      showToast('শিক্ষা-সংস্কৃতি, ক্রীড়া ও প্রকাশনা বিভাগের কার্যক্রম সংরক্ষিত হয়েছে!', 'success');
+    }
+
+    function handleAddAuditLog(e) {
+      e.preventDefault();
+      const period = document.getElementById('aud-period').value.trim();
+      const voucherChecked = document.getElementById('aud-vouchers').value.trim();
+      const finding = document.getElementById('aud-finding').value.trim();
+      state.auditLogs.unshift({
+        id: 'AUD-' + Math.floor(700 + Math.random() * 299),
+        period,
+        voucherChecked,
+        finding,
+        auditor: 'Md Riyad Talukder',
+        date: new Date().toISOString().slice(0, 10),
+        status: 'approved',
+        locked: false
+      });
+      saveState();
+      renderPortalsView();
+      showToast('অডিট রিপোর্ট সফলভাবে সংরক্ষিত হয়েছে!', 'success');
+    }
+
+    // =========================================================================
+    // DONATIONS GIVEN & RECEIVED LEDGER VIEW
+    // =========================================================================
+    function handleAddDonation(e) {
+      e.preventDefault();
+      const type = document.getElementById('don-type').value;
+      const party = document.getElementById('don-party').value.trim();
+      const amount = Number(document.getElementById('don-amount').value);
+      const purpose = document.getElementById('don-purpose').value.trim();
+
+      const newDon = {
+        id: (type === 'received' ? 'DON-IN-' : 'DON-OUT-') + Math.floor(10 + Math.random() * 89),
+        type,
+        party,
+        amount,
+        purpose,
+        date: new Date().toISOString().slice(0, 10),
+        status: 'pending',
+        locked: false
+      };
+
+      state.donations.unshift(newDon);
+      saveState();
+      e.target.reset();
+      renderDonationsView();
+      showToast('অনুদানের তথ্য সংরক্ষিত হয়েছে! রসিদ ও অনুমোদনের অপশন সক্রিয় রয়েছে।', 'success');
+    }
+
+    function renderDonationsView() {
+      const q = (document.getElementById('donation-search')?.value || '').toLowerCase();
+      const received = state.donations.filter(d => d.type === 'received' && (d.party.toLowerCase().includes(q) || d.purpose.toLowerCase().includes(q) || d.id.toLowerCase().includes(q)));
+      const given = state.donations.filter(d => d.type === 'given' && (d.party.toLowerCase().includes(q) || d.purpose.toLowerCase().includes(q) || d.id.toLowerCase().includes(q)));
+
+      const totalRec = received.filter(d => d.status !== 'cancelled').reduce((s, d) => s + Number(d.amount), 0);
+      const totalGiv = given.filter(d => d.status !== 'cancelled').reduce((s, d) => s + Number(d.amount), 0);
+
+      document.getElementById('badge-total-received').innerText = formatCurrency(totalRec);
+      document.getElementById('badge-total-given').innerText = formatCurrency(totalGiv);
+
+      const renderRow = (d, colorClass) => `
+        <tr class="hover:bg-slate-50 ${d.status === 'cancelled' ? 'opacity-60 bg-rose-50/30' : ''}">
+          <td class="p-3 text-xs align-top">
+            <strong class="font-mono ${colorClass}">${d.id}</strong><br>
+            <span class="text-slate-500">${d.date}</span>
+            <span class="block mt-1 text-[10px] font-bold ${d.status === 'approved' ? 'text-emerald-700' : d.status === 'cancelled' ? 'text-rose-700' : 'text-amber-700'}">
+              ${d.status === 'approved' ? '✓ অনুমোদিত' : d.status === 'cancelled' ? '✕ বাতিল' : '⏳ অপেক্ষমাণ'}
+            </span>
+          </td>
+          <td class="p-3 align-top">
+            <p class="font-bold text-slate-900 text-xs sm:text-sm">${d.party}</p>
+            <span class="text-[11px] text-slate-500">${d.purpose}</span>
+            ${renderRecordActionButtons('donations', d.id, d, ['finance', 'president'], `openItemReceipt('donations','${d.id}')`)}
+          </td>
+          <td class="p-3 text-right font-bold ${colorClass} align-top">${formatCurrency(d.amount)}</td>
+          <td class="p-3 text-center align-top">
+            <button onclick="openItemReceipt('donations','${d.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-950 text-xs font-bold">
+              <i class="fa-solid fa-receipt"></i> রসিদ
+            </button>
+          </td>
+        </tr>
+      `;
+
+      document.getElementById('table-donations-received').innerHTML = received.map(d => renderRow(d, 'text-teal-800')).join('');
+      document.getElementById('table-donations-given').innerHTML = given.map(d => renderRow(d, 'text-emerald-900')).join('');
+    }
+
+    // =========================================================================
+    // INITIALIZE APPLICATION
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      updateHeaderAuthUI();
+      renderDashboard();
+    });
+  </script>
+</body>
+</html>
+```
